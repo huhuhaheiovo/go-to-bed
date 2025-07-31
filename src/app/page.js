@@ -96,9 +96,21 @@ export default function HomePage() {
   const [showSettings, setShowSettings] = useState(false);
   const [timer, setTimer] = useState(0);
   const [timerActive, setTimerActive] = useState(false);
+  const [isQueueMode, setIsQueueMode] = useState(false);
 
   const audioRef = useRef(null);
   const timerRef = useRef(null);
+
+  // 停止所有音频
+  const stopAllAudio = () => {
+    if (audioRef.current) {
+      audioRef.current.pause();
+      audioRef.current.currentTime = 0;
+      audioRef.current = null;
+    }
+    setCurrentAudio(null);
+    setIsPlaying(false);
+  };
 
   // 创建音频元素
   const createAudioElement = (audioType) => {
@@ -115,11 +127,21 @@ export default function HomePage() {
     audio.loop = true;
     audio.volume = isMuted ? 0 : volume;
 
+    // 添加音频结束事件监听器（用于队列播放）
+    audio.addEventListener('ended', () => {
+      if (isQueueMode && playQueue.length > 0) {
+        playNextInQueue();
+      }
+    });
+
     return audio;
   };
 
   // 播放音频
   const playAudio = (audioType, customVolume = null) => {
+    // 先停止当前播放的音频
+    stopAllAudio();
+
     const audio = createAudioElement(audioType);
     if (!audio) {
       console.error('Failed to create audio element for:', audioType);
@@ -135,6 +157,7 @@ export default function HomePage() {
 
     audio.play().then(() => {
       console.log('Successfully started playing:', audioType);
+      audioRef.current = audio;
       setCurrentAudio({ audio, type: audioType });
       setIsPlaying(true);
     }).catch(error => {
@@ -142,13 +165,21 @@ export default function HomePage() {
     });
   };
 
+  // 播放队列中的下一首
+  const playNextInQueue = () => {
+    if (playQueue.length > 0) {
+      const nextAudio = playQueue[0];
+      setPlayQueue(prev => prev.slice(1));
+      playAudio(nextAudio, volume);
+    } else {
+      setIsQueueMode(false);
+    }
+  };
+
   // 直接播放音频（左键点击）
   const playAudioDirect = (audioType) => {
     console.log('Playing audio:', audioType);
-    // 停止当前播放
-    if (currentAudio) {
-      stopAudio();
-    }
+    setIsQueueMode(false);
     // 以50%音量播放
     playAudio(audioType, 0.5);
   };
@@ -158,14 +189,18 @@ export default function HomePage() {
     setPlayQueue(prev => [...prev, audioType]);
   };
 
+  // 开始队列播放
+  const startQueuePlayback = () => {
+    if (playQueue.length > 0) {
+      setIsQueueMode(true);
+      playNextInQueue();
+    }
+  };
+
   // 停止播放
   const stopAudio = () => {
-    if (currentAudio) {
-      currentAudio.audio.pause();
-      currentAudio.audio.currentTime = 0;
-      setCurrentAudio(null);
-      setIsPlaying(false);
-    }
+    stopAllAudio();
+    setIsQueueMode(false);
   };
 
   // 切换播放状态
@@ -189,16 +224,16 @@ export default function HomePage() {
   // 音量控制
   const handleVolumeChange = (newVolume) => {
     setVolume(newVolume);
-    if (currentAudio) {
-      currentAudio.audio.volume = isMuted ? 0 : newVolume;
+    if (audioRef.current) {
+      audioRef.current.volume = isMuted ? 0 : newVolume;
     }
   };
 
   // 静音切换
   const toggleMute = () => {
     setIsMuted(!isMuted);
-    if (currentAudio) {
-      currentAudio.audio.volume = !isMuted ? 0 : volume;
+    if (audioRef.current) {
+      audioRef.current.volume = !isMuted ? 0 : volume;
     }
   };
 
@@ -259,7 +294,7 @@ export default function HomePage() {
       {/* Usage Tips */}
       <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 mb-8">
         <div className="text-center text-blue-200 text-sm">
-          <p>💡 Tip: Left-click cards to play directly (80% volume), right-click to add to playback queue</p>
+          <p>💡 Tip: Left-click cards to play directly (50% volume), right-click to add to playback queue</p>
           <p className="mt-2">🎧 For best experience: wear headphones or place your phone horizontally near your pillow</p>
         </div>
       </div>
@@ -332,6 +367,9 @@ export default function HomePage() {
               <p className="font-semibold">
                 {currentAudio ? audioOptions.find(a => a.id === currentAudio.type)?.name : 'None Selected'}
               </p>
+              {isQueueMode && (
+                <p className="text-xs text-blue-300">Queue Mode Active</p>
+              )}
             </div>
           </div>
 
@@ -426,7 +464,13 @@ export default function HomePage() {
               );
             })}
           </div>
-          <div className="mt-4 text-center">
+          <div className="mt-4 text-center space-x-4">
+            <button
+              onClick={startQueuePlayback}
+              className="px-4 py-2 bg-green-500 hover:bg-green-600 rounded-lg text-sm transition-colors"
+            >
+              Start Queue Playback
+            </button>
             <button
               onClick={() => setPlayQueue([])}
               className="px-4 py-2 bg-red-500 hover:bg-red-600 rounded-lg text-sm transition-colors"
