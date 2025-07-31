@@ -5,46 +5,84 @@ import { Play, Pause, Volume2, VolumeX, RotateCcw, Settings } from 'lucide-react
 
 const audioOptions = [
   {
-    id: 'rain',
-    name: 'Rain',
-    description: 'Gentle raindrops creating a peaceful atmosphere',
-    icon: '🌧️',
-    color: 'from-blue-400 to-blue-600'
+    id: 'calming-tapping-A',
+    name: 'Calming tapping-A',
+    description: 'Gentle tapping sounds for relaxation',
+    icon: '🎵',
+    color: 'from-blue-400 to-blue-600',
+    file: '/mp3/App_7222221118600416568.mp3'
   },
   {
-    id: 'ocean',
-    name: 'Ocean Waves',
-    description: 'Soothing ocean waves, as if you\'re by the seaside',
-    icon: '🌊',
-    color: 'from-cyan-400 to-cyan-600'
+    id: 'calming-tapping-B',
+    name: 'Calming tapping-B',
+    description: 'Soothing tapping rhythms for peaceful sleep',
+    icon: '🎵',
+    color: 'from-cyan-400 to-cyan-600',
+    file: '/mp3/App_7223724561374776636.mp3'
   },
   {
-    id: 'forest',
-    name: 'Forest',
-    description: 'Bird songs and rustling leaves, returning to nature',
-    icon: '🌲',
-    color: 'from-green-400 to-green-600'
+    id: 'calming-tapping-C',
+    name: 'Calming tapping-C',
+    description: 'Relaxing ambient sounds for deep sleep',
+    icon: '🎵',
+    color: 'from-green-400 to-green-600',
+    file: '/mp3/App_7392556876099013923.mp3'
   },
   {
-    id: 'fire',
-    name: 'Campfire',
-    description: 'Warm crackling fire sounds, bringing a sense of security',
-    icon: '🔥',
-    color: 'from-orange-400 to-orange-600'
+    id: 'calming-tapping-D',
+    name: 'Calming tapping-D',
+    description: 'Peaceful sounds to calm your mind',
+    icon: '🎵',
+    color: 'from-orange-400 to-orange-600',
+    file: '/mp3/App_7405513864562920704.mp3'
   },
   {
-    id: 'white-noise',
-    name: 'White Noise',
-    description: 'Pure white noise to block out external disturbances',
-    icon: '⚪',
-    color: 'from-gray-400 to-gray-600'
+    id: 'calming-tapping-E',
+    name: 'Calming tapping-E',
+    description: 'Tranquil audio for meditation and sleep',
+    icon: '🎵',
+    color: 'from-purple-400 to-purple-600',
+    file: '/mp3/App_7471951244353981748.mp3'
   },
   {
-    id: 'cafe',
-    name: 'Cafe',
-    description: 'Soft background music and coffee machine sounds',
-    icon: '☕',
-    color: 'from-amber-400 to-amber-600'
+    id: 'calming-tapping-F',
+    name: 'Calming tapping-F',
+    description: 'Serene sounds for ultimate relaxation',
+    icon: '🎵',
+    color: 'from-pink-400 to-pink-600',
+    file: '/mp3/App_7394044353435487503.mp3'
+  },
+  {
+    id: 'calming-tapping-G',
+    name: 'Calming tapping-G',
+    description: 'Harmonious tones for peaceful rest',
+    icon: '🎵',
+    color: 'from-indigo-400 to-indigo-600',
+    file: '/mp3/App_7392927862027832616.mp3'
+  },
+  {
+    id: 'calming-tapping-H',
+    name: 'Calming tapping-H',
+    description: 'Gentle melodies for deep relaxation',
+    icon: '🎵',
+    color: 'from-teal-400 to-teal-600',
+    file: '/mp3/App_7494998407628786959.mp3'
+  },
+  {
+    id: 'calming-tapping-I',
+    name: 'Calming tapping-I',
+    description: 'Soothing rhythms for peaceful sleep',
+    icon: '🎵',
+    color: 'from-emerald-400 to-emerald-600',
+    file: '/mp3/App_7219258078217129253.mp3'
+  },
+  {
+    id: 'calming-tapping-J',
+    name: 'Calming tapping-J',
+    description: 'Tranquil sounds for meditation',
+    icon: '🎵',
+    color: 'from-rose-400 to-rose-600',
+    file: '/mp3/App_7403335311796817187.mp3'
   }
 ];
 
@@ -54,103 +92,77 @@ export default function HomePage() {
   const [volume, setVolume] = useState(0.5);
   const [isMuted, setIsMuted] = useState(false);
   const [selectedAudios, setSelectedAudios] = useState([]);
+  const [playQueue, setPlayQueue] = useState([]);
   const [showSettings, setShowSettings] = useState(false);
   const [timer, setTimer] = useState(0);
   const [timerActive, setTimerActive] = useState(false);
-  
+
   const audioRef = useRef(null);
   const timerRef = useRef(null);
 
-  // 创建音频上下文和音频源
-  const createAudioContext = () => {
-    if (!audioRef.current) {
-      const AudioContext = window.AudioContext || window.webkitAudioContext;
-      audioRef.current = new AudioContext();
-    }
-    return audioRef.current;
-  };
-
-  // 生成白噪音
-  const generateWhiteNoise = (type) => {
-    const audioContext = createAudioContext();
-    const bufferSize = audioContext.sampleRate * 2;
-    const buffer = audioContext.createBuffer(1, bufferSize, audioContext.sampleRate);
-    const output = buffer.getChannelData(0);
-
-    switch (type) {
-      case 'rain':
-        // 雨声 - 随机滴答声
-        for (let i = 0; i < bufferSize; i++) {
-          output[i] = Math.random() * 0.1 * (Math.random() > 0.99 ? 1 : 0.01);
-        }
-        break;
-      case 'ocean':
-        // 海浪声 - 低频振荡
-        for (let i = 0; i < bufferSize; i++) {
-          output[i] = Math.sin(i * 0.01) * 0.3 + Math.random() * 0.1;
-        }
-        break;
-      case 'forest':
-        // 森林声 - 鸟鸣和树叶声
-        for (let i = 0; i < bufferSize; i++) {
-          output[i] = Math.random() * 0.05 + (Math.random() > 0.999 ? Math.random() * 0.2 : 0);
-        }
-        break;
-      case 'fire':
-        // 篝火声 - 噼啪声
-        for (let i = 0; i < bufferSize; i++) {
-          output[i] = Math.random() * 0.15 * (Math.random() > 0.995 ? 1 : 0.3);
-        }
-        break;
-      case 'white-noise':
-        // 纯白噪音
-        for (let i = 0; i < bufferSize; i++) {
-          output[i] = (Math.random() - 0.5) * 0.3;
-        }
-        break;
-      case 'cafe':
-        // 咖啡馆背景音
-        for (let i = 0; i < bufferSize; i++) {
-          output[i] = Math.random() * 0.08 + Math.sin(i * 0.005) * 0.05;
-        }
-        break;
-      default:
-        for (let i = 0; i < bufferSize; i++) {
-          output[i] = (Math.random() - 0.5) * 0.2;
-        }
+  // 创建音频元素
+  const createAudioElement = (audioType) => {
+    console.log('Creating audio element for:', audioType);
+    const audioOption = audioOptions.find(option => option.id === audioType);
+    if (!audioOption) {
+      console.error('Audio option not found for:', audioType);
+      console.log('Available options:', audioOptions.map(opt => opt.id));
+      return null;
     }
 
-    return buffer;
+    console.log('Found audio option:', audioOption);
+    const audio = new Audio(audioOption.file);
+    audio.loop = true;
+    audio.volume = isMuted ? 0 : volume;
+
+    return audio;
   };
 
   // 播放音频
-  const playAudio = (audioType) => {
-    if (audioRef.current && audioRef.current.state === 'suspended') {
-      audioRef.current.resume();
+  const playAudio = (audioType, customVolume = null) => {
+    const audio = createAudioElement(audioType);
+    if (!audio) {
+      console.error('Failed to create audio element for:', audioType);
+      return;
     }
 
-    const buffer = generateWhiteNoise(audioType);
-    const source = audioRef.current.createBufferSource();
-    const gainNode = audioRef.current.createGain();
-    
-    source.buffer = buffer;
-    source.loop = true;
-    
-    gainNode.gain.value = isMuted ? 0 : volume;
-    
-    source.connect(gainNode);
-    gainNode.connect(audioRef.current.destination);
-    
-    source.start();
-    
-    setCurrentAudio({ source, gainNode, type: audioType });
-    setIsPlaying(true);
+    // 如果指定了自定义音量，使用它
+    if (customVolume !== null) {
+      audio.volume = customVolume;
+    }
+
+    console.log('Attempting to play:', audioType, 'at volume:', customVolume || volume);
+
+    audio.play().then(() => {
+      console.log('Successfully started playing:', audioType);
+      setCurrentAudio({ audio, type: audioType });
+      setIsPlaying(true);
+    }).catch(error => {
+      console.error('Error playing audio:', error);
+    });
+  };
+
+  // 直接播放音频（左键点击）
+  const playAudioDirect = (audioType) => {
+    console.log('Playing audio:', audioType);
+    // 停止当前播放
+    if (currentAudio) {
+      stopAudio();
+    }
+    // 以50%音量播放
+    playAudio(audioType, 0.5);
+  };
+
+  // 添加到播放队列（右键点击）
+  const addToQueue = (audioType) => {
+    setPlayQueue(prev => [...prev, audioType]);
   };
 
   // 停止播放
   const stopAudio = () => {
     if (currentAudio) {
-      currentAudio.source.stop();
+      currentAudio.audio.pause();
+      currentAudio.audio.currentTime = 0;
       setCurrentAudio(null);
       setIsPlaying(false);
     }
@@ -178,7 +190,7 @@ export default function HomePage() {
   const handleVolumeChange = (newVolume) => {
     setVolume(newVolume);
     if (currentAudio) {
-      currentAudio.gainNode.gain.value = isMuted ? 0 : newVolume;
+      currentAudio.audio.volume = isMuted ? 0 : newVolume;
     }
   };
 
@@ -186,7 +198,7 @@ export default function HomePage() {
   const toggleMute = () => {
     setIsMuted(!isMuted);
     if (currentAudio) {
-      currentAudio.gainNode.gain.value = !isMuted ? 0 : volume;
+      currentAudio.audio.volume = !isMuted ? 0 : volume;
     }
   };
 
@@ -217,34 +229,85 @@ export default function HomePage() {
 
   return (
     <div className="container mx-auto px-4 py-8">
+      {/* Important Notice */}
+      <div className="bg-gradient-to-r from-amber-500/20 to-red-500/20 border-2 border-amber-400/50 rounded-2xl p-6 mb-8 backdrop-blur-sm">
+        <div className="flex items-start gap-4">
+          <div className="text-2xl">💕</div>
+          <div className="flex-1">
+            <h3 className="text-lg font-bold text-amber-300 mb-3">Important Notice</h3>
+            <div className="text-sm text-blue-200 space-y-2">
+              <p>
+                Research has shown that rhythmic tapping on objects such as coconut shells, pinecones, and glass bottles can help relieve nervous system tension.
+              </p>
+              <p className="font-semibold text-red-300">
+                ⚠️ However, please note: These sounds are not suitable for everyone. If you experience increased anxiety or accelerated heart rate after listening, please leave and close this page immediately.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <header className="text-center mb-12">
         <h1 className="text-4xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent">
           Sleep Assistant
         </h1>
         <p className="text-xl text-blue-200">
-          Choose your favorite white noise and enjoy peaceful sleep
+         Calming tapping sounds for stress relief
         </p>
       </header>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+      {/* Usage Tips */}
+      <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 mb-8">
+        <div className="text-center text-blue-200 text-sm">
+          <p>💡 Tip: Left-click cards to play directly (80% volume), right-click to add to playback queue</p>
+          <p className="mt-2">🎧 For best experience: wear headphones or place your phone horizontally near your pillow</p>
+        </div>
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-12">
         {audioOptions.map((audio) => (
           <div
             key={audio.id}
-            onClick={() => selectAudio(audio.id)}
-            className={`relative p-6 rounded-2xl cursor-pointer transition-all duration-300 transform hover:scale-105 ${
-              selectedAudios.includes(audio.id)
-                ? 'bg-gradient-to-br ' + audio.color + ' shadow-2xl'
-                : 'bg-white/10 backdrop-blur-sm hover:bg-white/20'
+            onClick={(e) => {
+              e.preventDefault();
+              playAudioDirect(audio.id);
+            }}
+            onContextMenu={(e) => {
+              e.preventDefault();
+              addToQueue(audio.id);
+            }}
+            className={`relative p-6 rounded-2xl cursor-pointer transition-all duration-300 transform hover:scale-105 bg-white/10 backdrop-blur-sm hover:bg-white/20 ${
+              currentAudio && currentAudio.type === audio.id
+                ? 'border-2 border-[#041e43] shadow-lg shadow-[#041e43]/20'
+                : 'border-2 border-transparent'
             }`}
+            style={{
+              background: playQueue.includes(audio.id) && (!currentAudio || currentAudio.type !== audio.id)
+                ? 'linear-gradient(180deg, #021228 55.35%, #EC887D 156.3%)'
+                : undefined,
+              border: playQueue.includes(audio.id) && (!currentAudio || currentAudio.type !== audio.id)
+                ? '2px solid transparent'
+                : undefined,
+              backgroundClip: playQueue.includes(audio.id) && (!currentAudio || currentAudio.type !== audio.id)
+                ? 'padding-box'
+                : undefined
+            }}
           >
             <div className="text-4xl mb-4">{audio.icon}</div>
             <h3 className="text-xl font-semibold mb-2">{audio.name}</h3>
             <p className="text-sm text-blue-200">{audio.description}</p>
-            {selectedAudios.includes(audio.id) && (
-              <div className="absolute top-4 right-4 w-6 h-6 bg-white rounded-full flex items-center justify-center">
-                <div className="w-3 h-3 bg-blue-600 rounded-full"></div>
+            {currentAudio && currentAudio.type === audio.id && (
+              <div className="absolute top-4 right-4 w-6 h-6 bg-[#041e43] rounded-full flex items-center justify-center">
+                <div className="w-3 h-3 bg-white rounded-full animate-pulse"></div>
               </div>
             )}
+            {!currentAudio || currentAudio.type !== audio.id ? (
+              playQueue.includes(audio.id) && (
+                <div className="absolute top-4 right-4 w-6 h-6 bg-blue-500 rounded-full flex items-center justify-center">
+                  <span className="text-white text-xs font-bold">{playQueue.indexOf(audio.id) + 1}</span>
+                </div>
+              )
+            ) : null}
           </div>
         ))}
       </div>
@@ -263,7 +326,7 @@ export default function HomePage() {
             >
               {isPlaying ? <Pause size={24} /> : <Play size={24} />}
             </button>
-            
+
             <div className="text-center">
               <p className="text-sm text-blue-200">Currently Playing</p>
               <p className="font-semibold">
@@ -279,7 +342,7 @@ export default function HomePage() {
             >
               {isMuted ? <VolumeX size={20} /> : <Volume2 size={20} />}
             </button>
-            
+
             <div className="flex items-center gap-2 min-w-[120px]">
               <input
                 type="range"
@@ -340,10 +403,41 @@ export default function HomePage() {
         )}
       </div>
 
-      <div className="text-center text-blue-200 text-sm">
-        <p>💡 Tip: Select one or more audio types and click play to enjoy peaceful moments</p>
-        <p className="mt-2">🎧 Headphones recommended for the best experience</p>
-      </div>
+      {/* Playback Queue */}
+      {playQueue.length > 0 && (
+        <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 mb-8">
+          <h3 className="text-lg font-semibold mb-4 text-center">Playback Queue ({playQueue.length})</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+            {playQueue.map((audioId, index) => {
+              const audio = audioOptions.find(a => a.id === audioId);
+              return (
+                <div key={index} className="flex items-center justify-between p-3 bg-white/5 rounded-lg">
+                  <div className="flex items-center gap-3">
+                    <span className="text-sm text-blue-200">#{index + 1}</span>
+                    <span className="font-medium">{audio?.name}</span>
+                  </div>
+                  <button
+                    onClick={() => setPlayQueue(prev => prev.filter((_, i) => i !== index))}
+                    className="text-red-400 hover:text-red-300 text-sm"
+                  >
+                    Remove
+                  </button>
+                </div>
+              );
+            })}
+          </div>
+          <div className="mt-4 text-center">
+            <button
+              onClick={() => setPlayQueue([])}
+              className="px-4 py-2 bg-red-500 hover:bg-red-600 rounded-lg text-sm transition-colors"
+            >
+              Clear Queue
+            </button>
+          </div>
+        </div>
+      )}
+
+
     </div>
   );
 }
