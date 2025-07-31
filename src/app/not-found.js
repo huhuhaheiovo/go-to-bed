@@ -9,9 +9,9 @@ export default function NotFound() {
         </h1>
         <h2 className="text-2xl font-semibold mb-4">Page Not Found</h2>
         <p className="text-blue-200 mb-8">
-          The page you're looking for doesn't exist.
+          The page you&#39;re looking for doesn&#39;t exist.
         </p>
-        <Link 
+        <Link
           href="/"
           className="px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg hover:from-blue-600 hover:to-purple-700 transition-all duration-300"
         >
@@ -20,4 +20,4 @@ export default function NotFound() {
       </div>
     </div>
   );
-} 
+}
