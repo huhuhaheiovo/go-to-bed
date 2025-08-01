@@ -284,7 +284,7 @@ export default function HomePage() {
 
       <header className="text-center mb-12">
         <h1 className="text-4xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent">
-          Sleep Assistant
+          Sleep Assistant——Relieve sleep
         </h1>
         <p className="text-xl text-blue-200">
          Calming tapping sounds for stress relief
