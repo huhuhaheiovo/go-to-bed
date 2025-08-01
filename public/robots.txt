@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# 禁止访问 mp3 目录
+Disallow: /mp3/
+
+# 站点地图
+Sitemap: https://sleeptool.top/sitemap.xml 
