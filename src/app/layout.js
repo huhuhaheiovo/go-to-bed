@@ -39,8 +39,6 @@ export default function RootLayout({ children }) {
             gtag('config', 'G-NQW1FR7BEZ');
           `}
         </Script>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2409588554709380"
-        crossorigin="anonymous"></script>
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}

@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect } from 'react';
 import { Play, Pause, Volume2, VolumeX, RotateCcw, Settings } from 'lucide-react';
+import Script from 'next/script';
 
 const audioOptions = [
   {
@@ -263,8 +264,16 @@ export default function HomePage() {
   };
 
   return (
-    <div className="container mx-auto px-4 py-8">
-      {/* Important Notice */}
+    <>
+      {/* Google AdSense Script */}
+      <Script
+        async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2409588554709380"
+        crossOrigin="anonymous"
+      />
+      
+      <div className="container mx-auto px-4 py-8">
+        {/* Important Notice */}
       <div className="bg-gradient-to-r from-amber-500/20 to-red-500/20 border-2 border-amber-400/50 rounded-2xl p-6 mb-8 backdrop-blur-sm">
         <div className="flex items-start gap-4">
           <div className="text-2xl">💕</div>
@@ -482,6 +491,7 @@ export default function HomePage() {
       )}
 
 
-    </div>
+      </div>
+    </>
   );
 }
