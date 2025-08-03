@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Home, Music, Volume1, Heart, HelpCircle } from 'lucide-react';
+import { Home, Music, Volume1, Heart } from 'lucide-react';
 
 export default function Navigation() {
   const pathname = usePathname();
@@ -27,11 +27,6 @@ export default function Navigation() {
       href: '/asmr',
       label: 'ASMR',
       icon: Heart
-    },
-    {
-      href: '/help',
-      label: 'Help',
-      icon: HelpCircle
     }
   ];
 
@@ -41,8 +36,8 @@ export default function Navigation() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-gradient-to-r from-blue-400 to-purple-500 rounded-lg flex items-center justify-center">
-              <Music size={20} />
+            <div className="w-8 h-8 rounded-lg flex items-center justify-center">
+              <img src="/sleep-assistant.svg" alt="Sleep Assistant" className="w-6 h-6" />
             </div>
             <span className="text-xl font-bold">Sleep Assistant</span>
           </Link>
