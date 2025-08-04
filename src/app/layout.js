@@ -106,7 +106,7 @@ export default function RootLayout({ children }) {
           `}
       </Script>
     </head>
-      <body className="min-h-screen bg-gradient-to-br from-[#021228] via-[#0a1f3a] to-[#021228] text-white">
+      <body className="min-h-screen text-white" style={{ background: 'linear-gradient(180deg, #021228 55.35%, #EC887D 156.3%)' }}>
         <AudioContext.Provider value={audioContextValue}>
           <Navigation />
           <main className="min-h-screen">
