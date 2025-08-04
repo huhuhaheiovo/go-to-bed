@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect, useCallback } from 'react';
 import { Play, Pause, Volume2, VolumeX, RotateCcw, Settings } from 'lucide-react';
 import Script from 'next/script';
 
@@ -199,10 +199,10 @@ export default function HomePage() {
   };
 
   // 停止播放
-  const stopAudio = () => {
+  const stopAudio = useCallback(() => {
     stopAllAudio();
     setIsQueueMode(false);
-  };
+  }, []);
 
   // 切换播放状态
   const togglePlay = () => {
@@ -254,7 +254,7 @@ export default function HomePage() {
         clearTimeout(timerRef.current);
       }
     };
-  }, [timer, timerActive]);
+  }, [timer, timerActive, stopAudio]);
 
   // 格式化时间
   const formatTime = (seconds) => {

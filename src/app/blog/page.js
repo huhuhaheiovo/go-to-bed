@@ -1,5 +1,4 @@
 'use client';
-
 import Link from 'next/link';
 import { Calendar, Clock, ArrowRight } from 'lucide-react';
 
@@ -73,18 +72,18 @@ export default function BlogPage() {
                   </div>
                 </div>
               </div>
-              
+
               <h2 className="text-2xl font-bold mb-3 text-white hover:text-blue-200 transition-colors">
                 <Link href={`/blog/${post.slug}`}>
                   {post.title}
                 </Link>
               </h2>
-              
+
               <p className="text-gray-300 mb-4 leading-relaxed">
                 {post.excerpt}
               </p>
-              
-              <Link 
+
+              <Link
                 href={`/blog/${post.slug}`}
                 className="inline-flex items-center gap-2 text-blue-300 hover:text-blue-200 font-medium transition-colors"
               >
@@ -102,8 +101,8 @@ export default function BlogPage() {
               Get the latest sleep tips and wellness advice delivered to your inbox.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
-              <input 
-                type="email" 
+              <input
+                type="email"
                 placeholder="Enter your email"
                 className="flex-1 px-4 py-2 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-blue-400"
               />
@@ -116,4 +115,4 @@ export default function BlogPage() {
       </div>
     </div>
   );
-} 
+}

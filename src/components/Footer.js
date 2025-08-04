@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { BookOpen, Shield, FileText, Music, Mail, Github } from 'lucide-react';
 
 export default function Footer() {
@@ -60,7 +61,7 @@ export default function Footer() {
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="flex items-center gap-2 mb-4 md:mb-0">
               <div className="w-6 h-6 rounded flex items-center justify-center">
-                <img src="/sleep-assistant.svg" alt="Sleep Assistant" className="w-5 h-5" />
+                <Image src="/sleep-assistant.svg" alt="Sleep Assistant" width={20} height={20} className="w-5 h-5" />
               </div>
               <span className="text-lg font-bold">Sleep Assistant</span>
             </div>

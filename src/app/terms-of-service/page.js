@@ -1,9 +1,10 @@
+/* eslint-disable react/no-unescaped-entities */
 export default function TermsOfService() {
   return (
     <div className="container mx-auto px-4 py-8">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-3xl font-bold mb-6 text-center">Terms of Service</h1>
-        
+
         <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 mb-6">
           <h2 className="text-2xl font-semibold mb-4">1. Acceptance of Terms</h2>
           <p className="mb-4">
@@ -108,4 +109,4 @@ export default function TermsOfService() {
       </div>
     </div>
   );
-} 
+}

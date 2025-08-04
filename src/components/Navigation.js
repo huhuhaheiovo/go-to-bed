@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import Image from 'next/image';
 import { Home, Music, Volume1, Heart } from 'lucide-react';
 
 export default function Navigation() {
@@ -37,7 +38,7 @@ export default function Navigation() {
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
             <div className="w-8 h-8 rounded-lg flex items-center justify-center">
-              <img src="/sleep-assistant.svg" alt="Sleep Assistant" className="w-6 h-6" />
+              <Image src="/sleep-assistant.svg" alt="Sleep Assistant" className="w-6 h-6" />
             </div>
             <span className="text-xl font-bold">Sleep Assistant</span>
           </Link>

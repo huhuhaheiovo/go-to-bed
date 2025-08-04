@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 'use client';
 
 import Link from 'next/link';
@@ -155,7 +156,7 @@ export default function BlogPost() {
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-3xl font-bold mb-4">Article Not Found</h1>
           <p className="text-gray-300 mb-6">The article you're looking for doesn't exist.</p>
-          <Link 
+          <Link
             href="/blog"
             className="inline-flex items-center gap-2 text-blue-300 hover:text-blue-200 font-medium"
           >
@@ -170,7 +171,7 @@ export default function BlogPost() {
   return (
     <div className="container mx-auto px-4 py-8">
       <div className="max-w-4xl mx-auto">
-        <Link 
+        <Link
           href="/blog"
           className="inline-flex items-center gap-2 text-blue-300 hover:text-blue-200 font-medium mb-6"
         >
@@ -185,11 +186,11 @@ export default function BlogPost() {
                 {post.category}
               </span>
             </div>
-            
+
             <h1 className="text-3xl md:text-4xl font-bold mb-4 text-white">
               {post.title}
             </h1>
-            
+
             <div className="flex items-center gap-6 text-sm text-gray-300 mb-6">
               <div className="flex items-center gap-1">
                 <Calendar size={14} />
@@ -201,14 +202,14 @@ export default function BlogPost() {
               </div>
               <div>By {post.author}</div>
             </div>
-            
+
             <button className="flex items-center gap-2 text-gray-300 hover:text-white transition-colors">
               <Share2 size={16} />
               Share
             </button>
           </header>
 
-          <div 
+          <div
             className="prose prose-invert max-w-none"
             dangerouslySetInnerHTML={{ __html: post.content }}
           />
@@ -216,4 +217,4 @@ export default function BlogPost() {
       </div>
     </div>
   );
-} 
+}
