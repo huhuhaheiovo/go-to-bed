@@ -1,8 +1,8 @@
 'use client';
 
-import { useState, useRef, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { Play, Pause, Volume2, VolumeX, RotateCcw, Settings } from 'lucide-react';
-import Script from 'next/script';
+import { useAudio } from './layout';
 
 const audioOptions = [
   {
@@ -88,8 +88,16 @@ const audioOptions = [
 ];
 
 export default function HomePage() {
-  const [isPlaying, setIsPlaying] = useState(false);
-  const [currentAudio, setCurrentAudio] = useState(null);
+  const { 
+    globalAudio, 
+    globalIsPlaying, 
+    playGlobalAudio, 
+    stopGlobalAudio, 
+    pauseGlobalAudio, 
+    resumeGlobalAudio,
+    setGlobalVolume 
+  } = useAudio();
+
   const [volume, setVolume] = useState(0.5);
   const [isMuted, setIsMuted] = useState(false);
   const [selectedAudios, setSelectedAudios] = useState([]);
@@ -99,90 +107,20 @@ export default function HomePage() {
   const [timerActive, setTimerActive] = useState(false);
   const [isQueueMode, setIsQueueMode] = useState(false);
 
-  const audioRef = useRef(null);
-  const timerRef = useRef(null);
-
-  // 停止所有音频
-  const stopAllAudio = () => {
-    if (audioRef.current) {
-      audioRef.current.pause();
-      audioRef.current.currentTime = 0;
-      audioRef.current = null;
-    }
-    setCurrentAudio(null);
-    setIsPlaying(false);
-  };
-
-  // 创建音频元素
-  const createAudioElement = (audioType) => {
-    console.log('Creating audio element for:', audioType);
-    const audioOption = audioOptions.find(option => option.id === audioType);
-    if (!audioOption) {
-      console.error('Audio option not found for:', audioType);
-      console.log('Available options:', audioOptions.map(opt => opt.id));
-      return null;
-    }
-
-    console.log('Found audio option:', audioOption);
-    const audio = new Audio(audioOption.file);
-    audio.loop = true;
-    audio.volume = isMuted ? 0 : volume;
-
-    // 添加音频结束事件监听器（用于队列播放）
-    audio.addEventListener('ended', () => {
-      if (isQueueMode && playQueue.length > 0) {
-        playNextInQueue();
-      }
-    });
-
-    return audio;
-  };
-
-  // 播放音频
-  const playAudio = (audioType, customVolume = null) => {
-    // 先停止当前播放的音频
-    stopAllAudio();
-
-    const audio = createAudioElement(audioType);
-    if (!audio) {
-      console.error('Failed to create audio element for:', audioType);
-      return;
-    }
-
-    // 如果指定了自定义音量，使用它
-    if (customVolume !== null) {
-      audio.volume = customVolume;
-    }
-
-    console.log('Attempting to play:', audioType, 'at volume:', customVolume || volume);
-
-    audio.play().then(() => {
-      console.log('Successfully started playing:', audioType);
-      audioRef.current = audio;
-      setCurrentAudio({ audio, type: audioType });
-      setIsPlaying(true);
-    }).catch(error => {
-      console.error('Error playing audio:', error);
-    });
-  };
-
-  // 播放队列中的下一首
-  const playNextInQueue = () => {
-    if (playQueue.length > 0) {
-      const nextAudio = playQueue[0];
-      setPlayQueue(prev => prev.slice(1));
-      playAudio(nextAudio, volume);
-    } else {
-      setIsQueueMode(false);
-    }
+  // 获取当前播放的音频信息
+  const getCurrentAudioInfo = () => {
+    if (!globalAudio) return null;
+    return audioOptions.find(option => option.file === globalAudio.file);
   };
 
   // 直接播放音频（左键点击）
   const playAudioDirect = (audioType) => {
     console.log('Playing audio:', audioType);
     setIsQueueMode(false);
-    // 以50%音量播放
-    playAudio(audioType, 0.5);
+    const audioOption = audioOptions.find(option => option.id === audioType);
+    if (audioOption) {
+      playGlobalAudio(audioOption.file, 0.5);
+    }
   };
 
   // 添加到播放队列（右键点击）
@@ -190,70 +128,45 @@ export default function HomePage() {
     setPlayQueue(prev => [...prev, audioType]);
   };
 
-  // 开始队列播放
-  const startQueuePlayback = () => {
-    if (playQueue.length > 0) {
-      setIsQueueMode(true);
-      playNextInQueue();
+  // 切换播放状态
+  const togglePlay = () => {
+    if (globalIsPlaying) {
+      pauseGlobalAudio();
+    } else if (globalAudio) {
+      resumeGlobalAudio();
     }
   };
 
   // 停止播放
   const stopAudio = useCallback(() => {
-    stopAllAudio();
+    stopGlobalAudio();
     setIsQueueMode(false);
-  }, []);
-
-  // 切换播放状态
-  const togglePlay = () => {
-    if (isPlaying) {
-      stopAudio();
-    } else if (selectedAudios.length > 0) {
-      playAudio(selectedAudios[0]);
-    }
-  };
-
-  // 选择音频
-  const selectAudio = (audioId) => {
-    if (selectedAudios.includes(audioId)) {
-      setSelectedAudios(selectedAudios.filter(id => id !== audioId));
-    } else {
-      setSelectedAudios([...selectedAudios, audioId]);
-    }
-  };
+  }, [stopGlobalAudio]);
 
   // 音量控制
   const handleVolumeChange = (newVolume) => {
     setVolume(newVolume);
-    if (audioRef.current) {
-      audioRef.current.volume = isMuted ? 0 : newVolume;
-    }
+    setGlobalVolume(isMuted ? 0 : newVolume);
   };
 
   // 静音切换
   const toggleMute = () => {
     setIsMuted(!isMuted);
-    if (audioRef.current) {
-      audioRef.current.volume = !isMuted ? 0 : volume;
-    }
+    setGlobalVolume(!isMuted ? 0 : volume);
   };
 
   // 定时器功能
   useEffect(() => {
     if (timerActive && timer > 0) {
-      timerRef.current = setTimeout(() => {
+      const timerRef = setTimeout(() => {
         setTimer(timer - 1);
         if (timer - 1 === 0) {
           stopAudio();
           setTimerActive(false);
         }
       }, 1000);
+      return () => clearTimeout(timerRef);
     }
-    return () => {
-      if (timerRef.current) {
-        clearTimeout(timerRef.current);
-      }
-    };
   }, [timer, timerActive, stopAudio]);
 
   // 格式化时间
@@ -263,17 +176,11 @@ export default function HomePage() {
     return `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
   };
 
+  const currentAudioInfo = getCurrentAudioInfo();
+
   return (
-    <>
-      {/* Google AdSense Script */}
-      <Script
-        async
-        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2409588554709380"
-        crossOrigin="anonymous"
-      />
-      
-      <div className="container mx-auto px-4 py-8">
-        {/* Important Notice */}
+    <div className="container mx-auto px-4 py-8">
+      {/* Important Notice */}
       <div className="bg-gradient-to-r from-amber-500/20 to-red-500/20 border-2 border-amber-400/50 rounded-2xl p-6 mb-8 backdrop-blur-sm">
         <div className="flex items-start gap-4">
           <div className="text-2xl">💕</div>
@@ -321,18 +228,18 @@ export default function HomePage() {
               addToQueue(audio.id);
             }}
             className={`relative p-6 rounded-2xl cursor-pointer transition-all duration-300 transform hover:scale-105 bg-white/10 backdrop-blur-sm hover:bg-white/20 ${
-              currentAudio && currentAudio.type === audio.id
+              currentAudioInfo && currentAudioInfo.id === audio.id
                 ? 'border-2 border-[#041e43] shadow-lg shadow-[#041e43]/20'
                 : 'border-2 border-transparent'
             }`}
             style={{
-              background: playQueue.includes(audio.id) && (!currentAudio || currentAudio.type !== audio.id)
+              background: playQueue.includes(audio.id) && (!currentAudioInfo || currentAudioInfo.id !== audio.id)
                 ? 'linear-gradient(180deg, #021228 55.35%, #EC887D 156.3%)'
                 : undefined,
-              border: playQueue.includes(audio.id) && (!currentAudio || currentAudio.type !== audio.id)
+              border: playQueue.includes(audio.id) && (!currentAudioInfo || currentAudioInfo.id !== audio.id)
                 ? '2px solid transparent'
                 : undefined,
-              backgroundClip: playQueue.includes(audio.id) && (!currentAudio || currentAudio.type !== audio.id)
+              backgroundClip: playQueue.includes(audio.id) && (!currentAudioInfo || currentAudioInfo.id !== audio.id)
                 ? 'padding-box'
                 : undefined
             }}
@@ -340,12 +247,12 @@ export default function HomePage() {
             <div className="text-4xl mb-4">{audio.icon}</div>
             <h3 className="text-xl font-semibold mb-2">{audio.name}</h3>
             <p className="text-sm text-blue-200">{audio.description}</p>
-            {currentAudio && currentAudio.type === audio.id && (
+            {currentAudioInfo && currentAudioInfo.id === audio.id && (
               <div className="absolute top-4 right-4 w-6 h-6 bg-[#041e43] rounded-full flex items-center justify-center">
                 <div className="w-3 h-3 bg-white rounded-full animate-pulse"></div>
               </div>
             )}
-            {!currentAudio || currentAudio.type !== audio.id ? (
+            {!currentAudioInfo || currentAudioInfo.id !== audio.id ? (
               playQueue.includes(audio.id) && (
                 <div className="absolute top-4 right-4 w-6 h-6 bg-blue-500 rounded-full flex items-center justify-center">
                   <span className="text-white text-xs font-bold">{playQueue.indexOf(audio.id) + 1}</span>
@@ -361,20 +268,20 @@ export default function HomePage() {
           <div className="flex items-center gap-4">
             <button
               onClick={togglePlay}
-              disabled={selectedAudios.length === 0}
+              disabled={!globalIsPlaying && !globalAudio}
               className={`w-16 h-16 rounded-full flex items-center justify-center transition-all duration-300 ${
-                isPlaying
+                globalIsPlaying
                   ? 'bg-red-500 hover:bg-red-600'
                   : 'bg-green-500 hover:bg-green-600'
-              } ${selectedAudios.length === 0 ? 'opacity-50 cursor-not-allowed' : ''}`}
+              } ${!globalIsPlaying && !globalAudio ? 'opacity-50 cursor-not-allowed' : ''}`}
             >
-              {isPlaying ? <Pause size={24} /> : <Play size={24} />}
+              {globalIsPlaying ? <Pause size={24} /> : <Play size={24} />}
             </button>
 
             <div className="text-center">
               <p className="text-sm text-blue-200">Currently Playing</p>
               <p className="font-semibold">
-                {currentAudio ? audioOptions.find(a => a.id === currentAudio.type)?.name : 'None Selected'}
+                {currentAudioInfo ? currentAudioInfo.name : 'None Selected'}
               </p>
               {isQueueMode && (
                 <p className="text-xs text-blue-300">Queue Mode Active</p>
@@ -475,7 +382,15 @@ export default function HomePage() {
           </div>
           <div className="mt-4 text-center space-x-4">
             <button
-              onClick={startQueuePlayback}
+              onClick={() => {
+                if (playQueue.length > 0) {
+                  const firstAudio = audioOptions.find(a => a.id === playQueue[0]);
+                  if (firstAudio) {
+                    playGlobalAudio(firstAudio.file, volume);
+                    setPlayQueue(prev => prev.slice(1));
+                  }
+                }
+              }}
               className="px-4 py-2 bg-green-500 hover:bg-green-600 rounded-lg text-sm transition-colors"
             >
               Start Queue Playback
@@ -489,9 +404,6 @@ export default function HomePage() {
           </div>
         </div>
       )}
-
-
-      </div>
-    </>
+    </div>
   );
 }
