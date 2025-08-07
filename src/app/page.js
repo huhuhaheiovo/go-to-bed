@@ -185,7 +185,7 @@ export default function HomePage() {
         <div className="flex items-start gap-4">
           <div className="text-2xl">💕</div>
           <div className="flex-1">
-            <h3 className="text-lg font-bold text-amber-300 mb-3">Important Notice</h3>
+            <h2 className="text-lg font-bold text-amber-300 mb-3">Important Notice</h2>
             <div className="text-sm text-blue-200 space-y-2">
               <p>
                 Research has shown that rhythmic tapping on objects such as coconut shells, pinecones, and glass bottles can help relieve nervous system tension.
@@ -214,6 +214,10 @@ export default function HomePage() {
           <p className="mt-2">🎧 For best experience: wear headphones or place your phone horizontally near your pillow</p>
         </div>
       </div>
+
+      <h2 className="text-3xl font-bold text-center mb-8 bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent">
+        Calming Tapping Sounds
+      </h2>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-12">
         {audioOptions.map((audio) => (
@@ -262,6 +266,10 @@ export default function HomePage() {
           </div>
         ))}
       </div>
+
+      <h2 className="text-3xl font-bold text-center mb-8 bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent">
+        Audio Controls
+      </h2>
 
       <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 mb-8">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
@@ -356,6 +364,77 @@ export default function HomePage() {
           </div>
         )}
       </div>
+      {/* YouTube Video Previews */}
+      <div className="mb-12">
+        <h2 className="text-3xl font-bold text-center mb-8 bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent">
+          Related Videos
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 hover:bg-white/20 transition-all duration-300">
+            <div className="aspect-video mb-4 rounded-lg overflow-hidden">
+              <iframe
+                src="https://www.youtube.com/embed/o_vNbOycCDs"
+                title="YouTube video player"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className="w-full h-full"
+              ></iframe>
+            </div>
+            <h3 className="text-lg font-semibold mb-2 text-blue-200">Sleep Meditation Music</h3>
+            <p className="text-sm text-blue-300">Relaxing meditation music for deep sleep and stress relief</p>
+          </div>
+
+          <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 hover:bg-white/20 transition-all duration-300">
+            <div className="aspect-video mb-4 rounded-lg overflow-hidden">
+              <iframe
+                src="https://www.youtube.com/embed/_d3KP2Z2f84"
+                title="YouTube video player"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className="w-full h-full"
+              ></iframe>
+            </div>
+            <h3 className="text-lg font-semibold mb-2 text-blue-200">Calming Nature Sounds</h3>
+            <p className="text-sm text-blue-300">Peaceful nature sounds to help you fall asleep naturally</p>
+          </div>
+
+          <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 hover:bg-white/20 transition-all duration-300">
+            <div className="aspect-video mb-4 rounded-lg overflow-hidden">
+              <iframe
+                src="https://www.youtube.com/embed/ftzEq86FnDQ"
+                title="YouTube video player"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className="w-full h-full"
+              ></iframe>
+            </div>
+            <h3 className="text-lg font-semibold mb-2 text-blue-200">White Noise for Sleep</h3>
+            <p className="text-sm text-blue-300">Soothing white noise to block out distractions and promote sleep</p>
+          </div>
+
+          <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 hover:bg-white/20 transition-all duration-300">
+            <div className="aspect-video mb-4 rounded-lg overflow-hidden">
+              <iframe
+                src="https://www.youtube.com/embed/mA-2rErIelo"
+                title="YouTube video player"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className="w-full h-full"
+              ></iframe>
+            </div>
+            <h3 className="text-lg font-semibold mb-2 text-blue-200">ASMR Sleep Sounds</h3>
+            <p className="text-sm text-blue-300">Gentle ASMR sounds for ultimate relaxation and sleep</p>
+          </div>
+        </div>
+      </div>
+
+      <h2 className="text-3xl font-bold text-center mb-8 bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent">
+        Playback Queue
+      </h2>
 
       {/* Playback Queue */}
       {playQueue.length > 0 && (

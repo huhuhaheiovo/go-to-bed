@@ -88,6 +88,17 @@ export default function RootLayout({ children }) {
     <html lang="en">
     <head>
       <title>Sleep Assistant. Relieve sleep. White Noise.Sleep Sounds.ASMR</title>
+      <meta name="description" content="Sleep Assistant - Calming tapping sounds for stress relief and better sleep. White noise, sleep sounds, and ASMR for relaxation." />
+      <meta name="keywords" content="sleep assistant, white noise, sleep sounds, ASMR, relaxation, stress relief, meditation, sleep aid" />
+      <meta name="robots" content="index, follow" />
+      <link rel="canonical" href="https://sleep-assistant.vercel.app" />
+      <meta property="og:title" content="Sleep Assistant - Relieve Sleep" />
+      <meta property="og:description" content="Calming tapping sounds for stress relief and better sleep" />
+      <meta property="og:type" content="website" />
+      <meta property="og:url" content="https://sleep-assistant.vercel.app" />
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content="Sleep Assistant - Relieve Sleep" />
+      <meta name="twitter:description" content="Calming tapping sounds for stress relief and better sleep" />
       <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-NQW1FR7BEZ"
           strategy="afterInteractive"
