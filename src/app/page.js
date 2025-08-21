@@ -5,30 +5,7 @@ import { Play, Pause, Volume2, VolumeX, RotateCcw, Settings } from 'lucide-react
 import { useAudio } from './layout';
 
 const audioOptions = [
-  {
-    id: 'calming-tapping-A',
-    name: 'Calming tapping-A',
-    description: 'Gentle tapping sounds for relaxation',
-    icon: '🎵',
-    color: 'from-blue-400 to-blue-600',
-    file: '/mp3/App_7222221118600416568.mp3'
-  },
-  {
-    id: 'calming-tapping-B',
-    name: 'Calming tapping-B',
-    description: 'Soothing tapping rhythms for peaceful sleep',
-    icon: '🎵',
-    color: 'from-cyan-400 to-cyan-600',
-    file: '/mp3/App_7223724561374776636.mp3'
-  },
-  {
-    id: 'calming-tapping-C',
-    name: 'Calming tapping-C',
-    description: 'Relaxing ambient sounds for deep sleep',
-    icon: '🎵',
-    color: 'from-green-400 to-green-600',
-    file: '/mp3/App_7392556876099013923.mp3'
-  },
+
   {
     id: 'calming-tapping-D',
     name: 'Calming tapping-D',
@@ -84,18 +61,42 @@ const audioOptions = [
     icon: '🎵',
     color: 'from-rose-400 to-rose-600',
     file: '/mp3/App_7403335311796817187.mp3'
+  },
+  {
+    id: 'calming-tapping-A',
+    name: 'Calming tapping-A',
+    description: 'Gentle tapping sounds for relaxation',
+    icon: '🎵',
+    color: 'from-blue-400 to-blue-600',
+    file: '/mp3/App_7222221118600416568.mp3'
+  },
+  {
+    id: 'calming-tapping-B',
+    name: 'Calming tapping-B',
+    description: 'Soothing tapping rhythms for peaceful sleep',
+    icon: '🎵',
+    color: 'from-cyan-400 to-cyan-600',
+    file: '/mp3/App_7223724561374776636.mp3'
+  },
+  {
+    id: 'calming-tapping-C',
+    name: 'Calming tapping-C',
+    description: 'Relaxing ambient sounds for deep sleep',
+    icon: '🎵',
+    color: 'from-green-400 to-green-600',
+    file: '/mp3/App_7392556876099013923.mp3'
   }
 ];
 
 export default function HomePage() {
-  const { 
-    globalAudio, 
-    globalIsPlaying, 
-    playGlobalAudio, 
-    stopGlobalAudio, 
-    pauseGlobalAudio, 
+  const {
+    globalAudio,
+    globalIsPlaying,
+    playGlobalAudio,
+    stopGlobalAudio,
+    pauseGlobalAudio,
     resumeGlobalAudio,
-    setGlobalVolume 
+    setGlobalVolume
   } = useAudio();
 
   const [volume, setVolume] = useState(0.5);
@@ -367,13 +368,13 @@ export default function HomePage() {
       {/* YouTube Video Previews */}
       <div className="mb-12">
         <h2 className="text-3xl font-bold text-center mb-8 bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent">
-          Related Videos
+          Recommended Collection
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 hover:bg-white/20 transition-all duration-300">
             <div className="aspect-video mb-4 rounded-lg overflow-hidden">
               <iframe
-                src="https://www.youtube.com/embed/o_vNbOycCDs"
+                src="https://www.youtube.com/embed/SihqNhuuq80"
                 title="YouTube video player"
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -403,7 +404,7 @@ export default function HomePage() {
           <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 hover:bg-white/20 transition-all duration-300">
             <div className="aspect-video mb-4 rounded-lg overflow-hidden">
               <iframe
-                src="https://www.youtube.com/embed/ftzEq86FnDQ"
+                src="https://www.youtube.com/embed/UkfLncNxK08"
                 title="YouTube video player"
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
