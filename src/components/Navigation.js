@@ -3,12 +3,13 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import Image from 'next/image';
-import { Home, Music, Volume1, Heart } from 'lucide-react';
+import {Home, Music, Volume1, Heart, Bed} from 'lucide-react';
 
 export default function Navigation() {
   const pathname = usePathname();
 
   const navItems = [
+
     {
       href: '/',
       label: 'Tapping Sound',
@@ -28,6 +29,11 @@ export default function Navigation() {
       href: '/asmr',
       label: 'ASMR',
       icon: Heart
+    },
+    {
+      href: '/regarding-sleep',
+      label: 'Regarding sleep',
+      icon: Bed
     }
   ];
 
