@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { BookOpen, Shield, FileText, Music, Mail, Github } from 'lucide-react';
+import { BookOpen, Shield, FileText, Music, Mail, Github,CreditCard  } from 'lucide-react';
 
 export default function Footer() {
   const footerLinks = [
@@ -27,7 +27,15 @@ export default function Footer() {
         { href: 'mailto:xu310715321@gmail.com', label: 'Email', icon: Mail },
         { href: 'https://github.com', label: 'GitHub', icon: Github },
       ]
-    }
+    },
+    {
+      title: "blogroll",
+      links: [
+        { href: 'https://playloltcg.help/en/cards', label: 'cards', icon:  CreditCard},
+        { href: 'https://playloltcg.help/en/cardBuilder', label: 'cards', icon: CreditCard },
+      ]
+    },
+
   ];
 
   return (
@@ -42,7 +50,7 @@ export default function Footer() {
                   const Icon = link.icon;
                   return (
                     <li key={link.href}>
-                      <Link 
+                      <Link
                         href={link.href}
                         className="flex items-center gap-2 text-gray-300 hover:text-blue-200 transition-colors"
                       >
@@ -56,7 +64,7 @@ export default function Footer() {
             </div>
           ))}
         </div>
-        
+
         <div className="border-t border-white/10 pt-6">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="flex items-center gap-2 mb-4 md:mb-0">
@@ -65,7 +73,7 @@ export default function Footer() {
               </div>
               <span className="text-lg font-bold">Sleep Assistant</span>
             </div>
-            
+
             <div className="text-sm text-gray-400">
               © 2025 Sleep Assistant. All rights reserved.
             </div>
@@ -74,4 +82,4 @@ export default function Footer() {
       </div>
     </footer>
   );
-} 
+}
