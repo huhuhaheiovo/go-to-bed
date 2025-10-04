@@ -111,3 +111,4 @@ Welcome to submit Issues and Pull Requests to improve this project!
 ---
 
 Enjoy peaceful sleep! 🌙✨
+<a href="https://playloltcg.help/en/cardBuilder" rel="dofollow">Riftbound</a>
