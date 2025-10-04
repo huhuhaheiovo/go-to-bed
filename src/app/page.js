@@ -3,6 +3,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import { Play, Pause, Volume2, VolumeX, RotateCcw, Settings } from 'lucide-react';
 import { useAudio } from './layout';
+import Link from "next/link";
 
 const audioOptions = [
 
@@ -201,10 +202,10 @@ export default function HomePage() {
 
       <header className="text-center mb-12">
         <h1 className="text-4xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent">
-          Sleep Assistant——Relieve sleep
+          best noises to sleep,Sleep Meditation, Music, and Background Sounds for Better Rest
         </h1>
         <p className="text-xl text-blue-200">
-         Calming tapping sounds for stress relief
+         End your day with meditation, peaceful music, and calming background sounds that guide you into deep sleep.
         </p>
       </header>
 
@@ -433,10 +434,6 @@ export default function HomePage() {
         </div>
       </div>
 
-      <h2 className="text-3xl font-bold text-center mb-8 bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent">
-        Playback Queue
-      </h2>
-
       {/* Playback Queue */}
       {playQueue.length > 0 && (
         <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 mb-8">
@@ -484,6 +481,95 @@ export default function HomePage() {
           </div>
         </div>
       )}
+
+
+      <main className="container mx-auto px-4 py-10 flex flex-col md:flex-row gap-6 ">
+        {/* 左边：文章内容 */}
+        <div className="md:w-2/3 w-full">
+          {/* 横幅图 */}
+          <div className="relative w-full aspect-[16/9]">
+            <img
+                src="/sleep-20250918.jpg"
+                alt="Baby Shower Banner"
+                className="object-cover rounded-lg shadow w-full h-full"
+            />
+          </div>
+          <div className="max-w-3xl mx-auto px-6 py-12  leading-relaxed">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center">
+              Can Soothing Sounds Really Help You Sleep?
+            </h2>
+
+            <p className="mb-6">
+              Yes—science says they can. Research indicates that the best noises to sleep with can enhance sleep efficiency by masking disruptive environmental sounds. For example, white noise helps many people fall asleep faster, while pink noise has been linked to deeper, more stable sleep cycles. By experimenting with different soothing sleep sounds, you can discover what best aligns with your body's natural rhythm.
+            </p>
+
+            <h2 className="text-2xl font-semibold mt-10 mb-4">Are Sleep Sounds Just a Trend?</h2>
+            <p className="mb-6">
+              Not at all. Scientific studies consistently support the effectiveness of soothing sounds for sleep. Regular, calming background noise provides an audio shield against unwanted disturbances—a process known as auditory masking.
+            </p>
+
+            <p className="mb-6">
+              Beyond masking noise, these sounds also promote relaxation. Just as a warm bath helps your body prepare for rest, a comforting audio backdrop soothes the mind, making it easier to drift off. The right sounds not only help you fall asleep quicker but also improve sleep consolidation, leading to fewer wake-ups during the night.
+            </p>
+
+            <h2 className="text-2xl font-semibold mt-10 mb-4">10 Best Noises to Sleep To: White Noise, Nature, ASMR and More</h2>
+            <p className="mb-6">
+              Now that you know sound plays a powerful role in sleep, here are some of the best sleep noises and soundscapes to incorporate into your nightly routine:
+            </p>
+
+            <h3 className="text-xl font-semibold mt-8 mb-3">White Noise, Pink Noise, Brown Noise, and Green Noise</h3>
+            <p className="mb-6">
+              These "color noises" provide a steady, consistent backdrop across different frequencies. Think of the soft hum of a fan, the drone of an airplane cabin, or the static-like hiss of a radio. This blanket of sound helps mask sudden environmental disruptions, creating a stable and calming environment.
+            </p>
+
+            <h3 className="text-xl font-semibold mt-8 mb-3">White Noise vs. Brown Noise: What's the Difference?</h3>
+            <p className="mb-6">
+              The color-coded naming system describes how noise energy is distributed across frequencies:
+            </p>
+
+            <h4 className="text-lg font-semibold mt-6 mb-3">White Noise</h4>
+            <p className="mb-6">
+              Evenly spread across all frequencies, similar to a gentle radio hiss. It effectively masks other sounds, making it one of the most popular noises to sleep to.
+            </p>
+
+            <h4 className="text-lg font-semibold mt-6 mb-3">Pink Noise</h4>
+            <p className="mb-6">
+              Slightly deeper than white noise, with more emphasis on lower frequencies. Many studies suggest it helps promote deep, restorative sleep.
+            </p>
+
+            <h4 className="text-lg font-semibold mt-6 mb-3">Brown Noise</h4>
+            <p className="mb-6">
+              Richer and deeper, resembling rumbling thunder or the low roar of ocean waves. It's ideal for those who prefer low-frequency tones.
+            </p>
+
+            <h4 className="text-lg font-semibold mt-6 mb-3">Green Noise</h4>
+            <p className="mb-6">
+              Balanced frequencies, often associated with natural soundscapes like waterfalls or breezes.
+            </p>
+
+            <p className="mb-6">
+              And then there's Black Noise—silence. While silence is technically the absolute best for sleep, it's rarely achievable in the real world, which is why people turn to soothing sleep sounds instead.
+            </p>
+          </div>
+
+        </div>
+        {/* 右边：侧栏 */}
+        <aside className="md:w-1/3 w-full border-l pl-6">
+          <h2 className="text-3xl font-bold text-[#5799f9] mb-4">More content </h2>
+          <ul className="space-y-4">
+            <li className="border-b-2 py-3 border-b-blue-900">
+              <Link href="/regarding-sleep"
+                    className="text-xl  font-semibold hover:underline    hover:text-blue-300">4-7-8 Method for Rapidly Falling Asleep Through Breathing</Link>
+              <p>September 09, 2025</p>
+            </li>
+            <li className="border-b-2 py-3 border-b-blue-900">
+              <Link href="/regarding-sleep/good-sleep" className="text-xl  font-semibold hover:underline    hover:text-blue-300"> Why Good Sleep Matters and How to Get It</Link>
+              <p>September 16, 2025</p>
+            </li>
+
+          </ul>
+        </aside>
+      </main>
     </div>
   );
 }

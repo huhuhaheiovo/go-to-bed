@@ -87,7 +87,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
     <head>
-      <title>Sleep Assistant. Relieve sleep. White Noise.Sleep Sounds.ASMR</title>
+      <title>best noises to sleep|Meditation and Sleep</title>
       <meta name="description" content="Sleep Assistant - Calming tapping sounds for stress relief and better sleep. White noise, sleep sounds, and ASMR for relaxation." />
       <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-NQW1FR7BEZ"
