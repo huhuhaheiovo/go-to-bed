@@ -500,7 +500,7 @@ export default function HomePage() {
             </h2>
 
             <p className="mb-6">
-              Yes—science says they can. Research indicates that the best noises to sleep with can enhance sleep efficiency by masking disruptive environmental sounds. For example, white noise helps many people fall asleep faster, while pink noise has been linked to deeper, more stable sleep cycles. By experimenting with different soothing sleep sounds, you can discover what best aligns with your body's natural rhythm.
+              Yes—science says they can. Research indicates that the best noises to sleep with can enhance sleep efficiency by masking disruptive environmental sounds. For example, white noise helps many people fall asleep faster, while pink noise has been linked to deeper, more stable sleep cycles. By experimenting with different soothing sleep sounds, you can discover what best aligns with your body&apos;s natural rhythm.
             </p>
 
             <h2 className="text-2xl font-semibold mt-10 mb-4">Are Sleep Sounds Just a Trend?</h2>
@@ -519,10 +519,10 @@ export default function HomePage() {
 
             <h3 className="text-xl font-semibold mt-8 mb-3">White Noise, Pink Noise, Brown Noise, and Green Noise</h3>
             <p className="mb-6">
-              These "color noises" provide a steady, consistent backdrop across different frequencies. Think of the soft hum of a fan, the drone of an airplane cabin, or the static-like hiss of a radio. This blanket of sound helps mask sudden environmental disruptions, creating a stable and calming environment.
+              These &quot;color noises&quot; provide a steady, consistent backdrop across different frequencies. Think of the soft hum of a fan, the drone of an airplane cabin, or the static-like hiss of a radio. This blanket of sound helps mask sudden environmental disruptions, creating a stable and calming environment.
             </p>
 
-            <h3 className="text-xl font-semibold mt-8 mb-3">White Noise vs. Brown Noise: What's the Difference?</h3>
+            <h3 className="text-xl font-semibold mt-8 mb-3">White Noise vs. Brown Noise: What&#39;s the Difference?</h3>
             <p className="mb-6">
               The color-coded naming system describes how noise energy is distributed across frequencies:
             </p>
@@ -539,7 +539,7 @@ export default function HomePage() {
 
             <h4 className="text-lg font-semibold mt-6 mb-3">Brown Noise</h4>
             <p className="mb-6">
-              Richer and deeper, resembling rumbling thunder or the low roar of ocean waves. It's ideal for those who prefer low-frequency tones.
+              Richer and deeper, resembling rumbling thunder or the low roar of ocean waves. It&apos;s ideal for those who prefer low-frequency tones.
             </p>
 
             <h4 className="text-lg font-semibold mt-6 mb-3">Green Noise</h4>
@@ -548,7 +548,7 @@ export default function HomePage() {
             </p>
 
             <p className="mb-6">
-              And then there's Black Noise—silence. While silence is technically the absolute best for sleep, it's rarely achievable in the real world, which is why people turn to soothing sleep sounds instead.
+              And then there&apos;s Black Noise—silence. While silence is technically the absolute best for sleep, it&apos;s rarely achievable in the real world, which is why people turn to soothing sleep sounds instead.
             </p>
           </div>
 

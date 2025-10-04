@@ -357,6 +357,8 @@ export default function ASMRPage() {
                 src="/sleep-20250918.jpg"
                 alt="Baby Shower Banner"
                 className="object-cover rounded-lg shadow w-full h-full"
+                width={800}
+                height={450}
             />
           </div>
           <div className="max-w-3xl mx-auto px-6 py-12  leading-relaxed">
@@ -377,7 +379,7 @@ export default function ASMRPage() {
             </p>
 
             <p className="mb-6">
-              By choosing the right sound environment, you can turn your bedroom into a true haven for rest. Imagine lying in a room that feels like a tranquil beach, where waves roll softly onto the shore, or a peaceful forest alive with quiet nocturnal melodies. These soundscapes don't just please the ear—they serve as a steady rhythm, guiding the mind away from stress and inviting the body into restorative sleep.
+              By choosing the right sound environment, you can turn your bedroom into a true haven for rest. Imagine lying in a room that feels like a tranquil beach, where waves roll softly onto the shore, or a peaceful forest alive with quiet nocturnal melodies. These soundscapes don&apos;t just please the ear—they serve as a steady rhythm, guiding the mind away from stress and inviting the body into restorative sleep.
             </p>
 
             <h2 className="text-2xl font-semibold mt-10 mb-4">Why Calming Sounds Improve Sleep</h2>
@@ -391,7 +393,7 @@ export default function ASMRPage() {
 
             <h3 className="text-xl font-semibold mt-8 mb-3">Sounds act as a bedtime signal</h3>
             <p className="mb-6">
-              Just as darkness tells your body it's time to sleep, introducing a specific nighttime sound can serve as a powerful cue. Over time, your brain begins to associate that sound with rest, making it easier to unwind at night.
+              Just as darkness tells your body it&apos;s time to sleep, introducing a specific nighttime sound can serve as a powerful cue. Over time, your brain begins to associate that sound with rest, making it easier to unwind at night.
             </p>
 
             <h3 className="text-xl font-semibold mt-8 mb-3">Sounds calm brain activity</h3>
@@ -406,7 +408,7 @@ export default function ASMRPage() {
 
             <h3 className="text-xl font-semibold mt-8 mb-3">Sounds mask disruptive noises</h3>
             <p className="mb-6">
-              Whether it's city traffic, a neighbor's television, or a restless pet, external noise can interfere with sleep. Sleep sounds provide a steady sonic backdrop, helping to mask these disturbances and creating a calmer, more sleep-friendly atmosphere.
+              Whether it&apos;s city traffic, a neighbor&apos;s television, or a restless pet, external noise can interfere with sleep. Sleep sounds provide a steady sonic backdrop, helping to mask these disturbances and creating a calmer, more sleep-friendly atmosphere.
             </p>
 
             <h3 className="text-xl font-semibold mt-8 mb-3">Sounds support people with insomnia and anxiety</h3>
@@ -425,12 +427,12 @@ export default function ASMRPage() {
 
             <h3 className="text-xl font-semibold mt-8 mb-3">White Noise</h3>
             <p className="mb-6">
-              A consistent "shhh" sound that masks disruptive background noises like traffic or conversations.
+              A consistent &quot;shhh&quot; sound that masks disruptive background noises like traffic or conversations.
             </p>
 
             <h3 className="text-xl font-semibold mt-8 mb-3">Pink Noise</h3>
             <p className="mb-6">
-              Softer and more balanced than white noise, often compared to falling rain or rustling leaves. It's believed to improve deep sleep stages.
+              Softer and more balanced than white noise, often compared to falling rain or rustling leaves. It&apos;s believed to improve deep sleep stages.
             </p>
 
             <h3 className="text-xl font-semibold mt-8 mb-3">Brown Noise</h3>
