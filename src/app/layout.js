@@ -86,28 +86,26 @@ export default function RootLayout({ children }) {
 
   return (
     <html lang="en">
-    <head>
-      <title>best noises to sleep|Meditation and Sleep</title>
-      <meta name="description" content="Sleep Assistant - Calming tapping sounds for stress relief and better sleep. White noise, sleep sounds, and ASMR for relaxation." />
-      <Script
+      <head>
+        <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-NQW1FR7BEZ"
           strategy="afterInteractive"
-      />
-      <Script
+        />
+        <Script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2409588554709380"
           crossOrigin="anonymous"
-      />
-      <Script id="google-analytics" strategy="afterInteractive">
-        {`
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
             gtag('config', 'G-NQW1FR7BEZ');
           `}
-      </Script>
-    </head>
-      <body className="min-h-screen text-white" style={{ background: 'linear-gradient(180deg, #021228 55.35%, #EC887D 156.3%)' }}>
+        </Script>
+      </head>
+      <body className="min-h-screen text-slate-200 antialiased" style={{ background: 'linear-gradient(to bottom right, #0f172a, #1e1b4b, #312e81)' }}>
         <AudioContext.Provider value={audioContextValue}>
           <Navigation />
           <main className="min-h-screen">
@@ -116,6 +114,6 @@ export default function RootLayout({ children }) {
           <Footer />
         </AudioContext.Provider>
       </body>
-    </html>
+    </html >
   );
 }
