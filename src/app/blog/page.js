@@ -5,6 +5,15 @@ import { Calendar, Clock, ArrowRight } from 'lucide-react';
 export default function BlogPage() {
   const blogPosts = [
     {
+      id: 5,
+      title: "5 Proven Techniques for Quick Sleep",
+      excerpt: "Struggling to fall asleep? Discover scientific methods and tools including white noise, sleep sounds, and ASMR to help you achieve quick sleep.",
+      date: "December 10, 2025",
+      readTime: "6 min read",
+      category: "Sleep Tips",
+      slug: "5-proven-techniques-quick-sleep"
+    },
+    {
       id: 1,
       title: "How to Improve Your Sleep Quality with White Noise",
       excerpt: "Discover the science behind white noise and how it can help you achieve better sleep quality. Learn about different types of white noise and their benefits.",

@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import Image from 'next/image';
 import { useState, useRef, useEffect } from 'react';
-import { Home, Music, Volume1, Heart, Bed, Globe, ChevronDown } from 'lucide-react';
+import { Home, Music, Volume1, Heart, Bed, Globe, ChevronDown, Calculator } from 'lucide-react';
 import { locales } from '../data/locales';
 
 export default function Navigation() {
@@ -43,6 +43,7 @@ export default function Navigation() {
     { href: '/white-noise', label: t.whiteNoise, icon: Volume1 },
     { href: '/sleep-sounds', label: t.sleepSounds, icon: Music },
     { href: '/asmr', label: t.asmr, icon: Heart },
+    { href: '/sleep-calculator', label: t.sleepCalculator, icon: Calculator },
     { href: '/regarding-sleep', label: t.regarding, icon: Bed }
   ];
 

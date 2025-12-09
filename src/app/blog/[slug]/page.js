@@ -11,6 +11,39 @@ export default function BlogPost() {
 
   // 模拟博客文章数据
   const blogPosts = {
+    '5-proven-techniques-quick-sleep': {
+      title: "5 Proven Techniques for Quick Sleep",
+      content: `
+        <h2>Unlock the Secrets to Quick Sleep</h2>
+        <p>In our fast-paced world, finding "quick sleep" can feel like an impossible dream. However, falling asleep effectively is a skill that can be mastered with the right techniques and tools. Here are 5 proven strategies to help you drift off faster.</p>
+
+        <h3>1. Optimize Your Sleep Schedule with a Calculator</h3>
+        <p>Understanding your natural sleep cycles is key to waking up refreshed. Use our <a href="/" class="text-blue-400 hover:text-blue-300">Sleep Calculator</a> to find the optimal bedtime based on when you need to wake up, ensuring you work with your body's rhythm rather than against it.</p>
+
+        <h3>2. Use White Noise to Block Distractions</h3>
+        <p>Sudden noises are a common enemy of quick sleep. <a href="/white-noise" class="text-blue-400 hover:text-blue-300">White Noise</a> creates a consistent background sound that masks disruptive noises like traffic or neighbors, helping your brain settle down instantly.</p>
+
+        <h3>3. Immerse Yourself in Sleep Sounds</h3>
+        <p>If white noise isn't your preference, try gentle nature sounds. Listening to <a href="/sleep-sounds" class="text-blue-400 hover:text-blue-300">Sleep Sounds</a> like rain or ocean waves can lower your heart rate and induce a state of relaxation conducive to falling asleep quickly.</p>
+
+        <h3>4. Experience the Tingles of ASMR</h3>
+        <p>For deep relaxation, many people turn to <a href="/asmr" class="text-blue-400 hover:text-blue-300">ASMR (Autonomous Sensory Meridian Response)</a>. These whispering and tapping sounds trigger comforting "tingles" that can rapidly reduce stress and prepare your mind for sleep.</p>
+
+        <h3>5. Practice the 4-7-8 Breathing Technique</h3>
+        <p>This simple breathing pattern acts as a natural tranquilizer for the nervous system:</p>
+        <ul>
+          <li>Exhale completely through your mouth.</li>
+          <li>Inhale through your nose for 4 seconds.</li>
+          <li>Hold your breath for 7 seconds.</li>
+          <li>Exhale through your mouth for 8 seconds.</li>
+        </ul>
+        <p>Repeat this cycle four times to calm your body and achieve quick sleep.</p>
+      `,
+      date: "December 10, 2025",
+      readTime: "6 min read",
+      category: "Sleep Tips",
+      author: "Sleep Expert Team"
+    },
     'improve-sleep-quality-white-noise': {
       title: "How to Improve Your Sleep Quality with White Noise",
       content: `

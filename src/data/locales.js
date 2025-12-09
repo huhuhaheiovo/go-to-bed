@@ -51,7 +51,8 @@ export const locales = {
             whiteNoise: "White Noise",
             sleepSounds: "Sleep Sounds",
             asmr: "ASMR",
-            regarding: "Regarding Sleep"
+            regarding: "Regarding Sleep",
+            sleepCalculator: "Sleep Calculator"
         }
     },
     ja: {
@@ -106,7 +107,8 @@ export const locales = {
             whiteNoise: "ホワイトノイズ",
             sleepSounds: "睡眠音",
             asmr: "ASMR",
-            regarding: "睡眠について"
+            regarding: "睡眠について",
+            sleepCalculator: "睡眠計算機"
         }
     },
     ko: {
@@ -161,7 +163,8 @@ export const locales = {
             whiteNoise: "백색 소음",
             sleepSounds: "수면 소리",
             asmr: "ASMR",
-            regarding: "수면에 관하여"
+            regarding: "수면에 관하여",
+            sleepCalculator: "수면 계산기"
         }
     },
     fr: {
@@ -216,7 +219,8 @@ export const locales = {
             whiteNoise: "Bruit Blanc",
             sleepSounds: "Sons de Sommeil",
             asmr: "ASMR",
-            regarding: "À propos du Sommeil"
+            regarding: "À propos du Sommeil",
+            sleepCalculator: "Calculateur de Sommeil"
         }
     },
     es: {
@@ -271,7 +275,8 @@ export const locales = {
             whiteNoise: "White Noise",
             sleepSounds: "Sleep Sounds",
             asmr: "ASMR",
-            regarding: "Regarding Sleep"
+            regarding: "Regarding Sleep",
+            sleepCalculator: "Calculadora de Sueño"
         }
     }
 };
