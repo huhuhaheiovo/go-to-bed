@@ -62,7 +62,7 @@ export default function SleepCalculatorPage() {
               <p>
                 The sleep cycle can be defined as the oscillation between non-REM (rapid eye movement) and REM sleep.
                 Typically, the body cycles between non-REM and REM sleep over a period of 90 minutes on average,
-                and should occur 4-6 times in a good night's sleep. Our Sleep Calculator is based on this 90-minute cycle.
+                and should occur 4-6 times in a good night&apos;s sleep. Our Sleep Calculator is based on this 90-minute cycle.
                 By using the Sleep Calculator, you can align your sleep schedule with these natural cycles for better rest quality.
               </p>
 
@@ -72,7 +72,7 @@ export default function SleepCalculatorPage() {
                 particularly during non-REM sleep. REM sleep is a type of sleep characterized by eye movements,
                 virtual paralysis of the body, and the occurrence of dreams. The Sleep Calculator helps you wake up
                 between these cycles for a more refreshed feeling. When you use the Sleep Calculator, it calculates
-                the best times to wake up based on when you'll be in lighter sleep stages, making it easier to start your day.
+                the best times to wake up based on when you&apos;ll be in lighter sleep stages, making it easier to start your day.
               </p>
 
               <h3 className="text-xl font-semibold text-white mt-6 mb-3">How Much Sleep Do I Need?</h3>
@@ -117,7 +117,7 @@ export default function SleepCalculatorPage() {
                 The Sleep Calculator is based on decades of sleep research and uses proven algorithms to calculate optimal sleep times.
               </p>
               <p>
-                Whether you're trying to establish a consistent sleep routine or need to adjust your schedule,
+                Whether you&apos;re trying to establish a consistent sleep routine or need to adjust your schedule,
                 the Sleep Calculator can help. The Sleep Calculator is free to use and provides instant results,
                 making it easy to plan your sleep schedule. Start using the Sleep Calculator today to improve your
                 sleep quality and wake up feeling more refreshed. The Sleep Calculator works for people of all ages
