@@ -1,3 +1,5 @@
+import { blogPosts } from '../data/blogPosts';
+
 export default function sitemap() {
     const baseUrl = 'https://sleeptool.top';
 
@@ -5,6 +7,12 @@ export default function sitemap() {
     const routes = [
         {
             url: baseUrl,
+            lastModified: new Date(),
+            changeFrequency: 'weekly',
+            priority: 1.0,
+        },
+        {
+            url: `${baseUrl}/sleep-calculator`,
             lastModified: new Date(),
             changeFrequency: 'weekly',
             priority: 1.0,
@@ -59,6 +67,14 @@ export default function sitemap() {
         },
     ];
 
+    // Blog post routes
+    const blogRoutes = blogPosts.map((post) => ({
+        url: `${baseUrl}/blog/${post.slug}`,
+        lastModified: new Date(post.date),
+        changeFrequency: 'monthly',
+        priority: 0.6,
+    }));
+
     // Language specific homepages
     const languages = ['ja', 'ko', 'fr', 'es'];
     const languageRoutes = languages.map((lang) => ({
@@ -68,5 +84,5 @@ export default function sitemap() {
         priority: 1.0,
     }));
 
-    return [...routes, ...languageRoutes];
+    return [...routes, ...blogRoutes, ...languageRoutes];
 }

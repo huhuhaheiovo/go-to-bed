@@ -2,54 +2,10 @@
 import Link from 'next/link';
 import { Calendar, Clock, ArrowRight } from 'lucide-react';
 
+import { blogPosts } from '../../data/blogPosts';
+
 export default function BlogPage() {
-  const blogPosts = [
-    {
-      id: 5,
-      title: "5 Proven Techniques for Quick Sleep",
-      excerpt: "Struggling to fall asleep? Discover scientific methods and tools including white noise, sleep sounds, and ASMR to help you achieve quick sleep.",
-      date: "December 10, 2025",
-      readTime: "6 min read",
-      category: "Sleep Tips",
-      slug: "5-proven-techniques-quick-sleep"
-    },
-    {
-      id: 1,
-      title: "How to Improve Your Sleep Quality with White Noise",
-      excerpt: "Discover the science behind white noise and how it can help you achieve better sleep quality. Learn about different types of white noise and their benefits.",
-      date: "August 15, 2025",
-      readTime: "5 min read",
-      category: "Sleep Science",
-      slug: "improve-sleep-quality-white-noise"
-    },
-    {
-      id: 2,
-      title: "The Benefits of ASMR for Relaxation and Sleep",
-      excerpt: "Explore the world of ASMR and how these autonomous sensory meridian response triggers can help you relax and fall asleep faster.",
-      date: "August 10, 2025",
-      readTime: "4 min read",
-      category: "ASMR",
-      slug: "asmr-benefits-relaxation-sleep"
-    },
-    {
-      id: 3,
-      title: "Natural Sleep Sounds: Nature's Lullaby",
-      excerpt: "From rain sounds to ocean waves, discover how natural sounds can create the perfect environment for restful sleep and deep relaxation.",
-      date: "August 5, 2025",
-      readTime: "6 min read",
-      category: "Sleep Sounds",
-      slug: "natural-sleep-sounds-nature-lullaby"
-    },
-    {
-      id: 4,
-      title: "Creating the Perfect Sleep Environment",
-      excerpt: "Learn how to set up your bedroom and use audio tools to create an optimal sleep environment that promotes deep, restorative sleep.",
-      date: "July 30, 2025",
-      readTime: "7 min read",
-      category: "Sleep Tips",
-      slug: "perfect-sleep-environment"
-    }
-  ];
+  // blogPosts is now imported
 
   return (
     <div className="container mx-auto px-4 py-8">
