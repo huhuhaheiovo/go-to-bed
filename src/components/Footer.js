@@ -81,20 +81,21 @@ export default function Footer() {
 
           {/* Pixel Beads Badge */}
           <div className="mt-6 flex justify-center">
-            <a 
-              href="https://www.pixel-beads.com" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              title="Create your own Perler Bead patterns for free"
-              className="hover:opacity-80 transition-opacity inline-block drop-shadow-md"
+            <a
+                href="https://www.pixel-beads.com/"
+                target="_blank"
+                rel="noopener"
+                aria-label="Create custom Perler Bead patterns with Pixel-Beads"
+                className="inline-block hover:opacity-80 transition-opacity"
             >
-              <img 
-                src="https://cdn3.playloltcg.help/pixel-beads.png" 
-                alt="Free Perler Bead Pattern Generator & Maker" 
-                width="54" 
-                height="54"
-                loading="lazy"
-                className="w-[54px] h-[54px] object-contain image-render-pixel" 
+              <img
+                  src="https://cdn3.playloltcg.help/pixel-beads.png"
+                  alt="Perler Bead Pattern Maker Tool"
+                  width="54"
+                  height="54"
+                  loading="lazy"
+                  className="w-[54px] h-[54px] rounded-lg shadow-sm"
+                  style={{ imageRendering: 'pixelated' }}
               />
             </a>
           </div>
