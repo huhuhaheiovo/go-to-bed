@@ -78,6 +78,26 @@ export default function Footer() {
               © 2025 Sleep Assistant. All rights reserved.
             </div>
           </div>
+
+          {/* Pixel Beads Badge */}
+          <div className="mt-6 flex justify-center">
+            <a 
+              href="https://www.pixel-beads.com" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              title="Create your own Perler Bead patterns for free"
+              className="hover:opacity-80 transition-opacity inline-block drop-shadow-md"
+            >
+              <img 
+                src="https://cdn3.playloltcg.help/pixel-beads.png" 
+                alt="Free Perler Bead Pattern Generator & Maker" 
+                width="54" 
+                height="54"
+                loading="lazy"
+                className="w-[54px] h-[54px] object-contain image-render-pixel" 
+              />
+            </a>
+          </div>
         </div>
       </div>
     </footer>

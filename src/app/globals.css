@@ -74,3 +74,10 @@ body {
 .text-glow {
   text-shadow: 0 0 20px rgba(99, 102, 241, 0.5);
 }
+
+/* Pixel Art Rendering */
+.image-render-pixel {
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
