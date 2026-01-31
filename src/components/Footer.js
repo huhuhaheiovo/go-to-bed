@@ -98,6 +98,15 @@ export default function Footer() {
                   style={{ imageRendering: 'pixelated' }}
               />
             </a>
+            <a href="https://www.queensgames.org/"  rel="dofollow" target="_blank">
+              <img src="https://cdn.queensgames.org/Queens-Games-Play-Logo.webp" alt="Play Queens Game Free Online"
+                   width="54"
+                   height="54"
+                   loading="lazy"
+                   className="w-[54px] h-[54px] rounded-lg shadow-sm"
+                   style={{imageRendering: 'pixelated'}}
+              />
+            </a>
           </div>
         </div>
       </div>
