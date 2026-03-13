@@ -1,100 +1,28 @@
-'use client';
+import './globals.css'
+import Script from 'next/script'
 
-import { createContext, useContext, useState, useRef, useCallback } from 'react';
-import Navigation from '../components/Navigation';
-import Footer from '../components/Footer';
-import './globals.css';
-import Script from "next/script";
-
-// 创建全局音频上下文
-const AudioContext = createContext();
-
-export function useAudio() {
-  const context = useContext(AudioContext);
-  if (!context) {
-    throw new Error('useAudio must be used within an AudioProvider');
+// 防止页面加载时主题闪烁（在 React 水合之前执行）
+const themeScript = `
+  try {
+    var stored = localStorage.getItem('theme');
+    if (stored === 'light') {
+      document.documentElement.classList.remove('dark');
+    } else {
+      document.documentElement.classList.add('dark');
+    }
+  } catch(e) {
+    document.documentElement.classList.add('dark');
   }
-  return context;
-}
+`
 
 export default function RootLayout({ children }) {
-  const [globalAudio, setGlobalAudio] = useState(null);
-  const [globalIsPlaying, setGlobalIsPlaying] = useState(false);
-  const globalAudioRef = useRef(null);
-
-  // 全局停止音频函数
-  const stopGlobalAudio = useCallback(() => {
-    if (globalAudioRef.current) {
-      globalAudioRef.current.pause();
-      globalAudioRef.current.currentTime = 0;
-      globalAudioRef.current = null;
-    }
-    setGlobalAudio(null);
-    setGlobalIsPlaying(false);
-  }, []);
-
-  // 全局播放音频函数
-  const playGlobalAudio = useCallback((audioFile, volume = 0.5) => {
-    // 先停止当前播放的音频
-    stopGlobalAudio();
-
-    const audio = new Audio(audioFile);
-    audio.loop = true;
-    audio.volume = volume;
-
-    audio.play().then(() => {
-      globalAudioRef.current = audio;
-      setGlobalAudio({ file: audioFile, volume });
-      setGlobalIsPlaying(true);
-    }).catch(error => {
-      console.error('Error playing global audio:', error);
-    });
-  }, [stopGlobalAudio]);
-
-  // 全局暂停音频函数
-  const pauseGlobalAudio = useCallback(() => {
-    if (globalAudioRef.current) {
-      globalAudioRef.current.pause();
-      setGlobalIsPlaying(false);
-    }
-  }, []);
-
-  // 全局恢复播放函数
-  const resumeGlobalAudio = useCallback(() => {
-    if (globalAudioRef.current && globalAudio) {
-      globalAudioRef.current.play();
-      setGlobalIsPlaying(true);
-    }
-  }, [globalAudio]);
-
-  // 全局音量控制
-  const setGlobalVolume = useCallback((volume) => {
-    if (globalAudioRef.current) {
-      globalAudioRef.current.volume = volume;
-    }
-  }, []);
-
-  const audioContextValue = {
-    globalAudio,
-    globalIsPlaying,
-    playGlobalAudio,
-    stopGlobalAudio,
-    pauseGlobalAudio,
-    resumeGlobalAudio,
-    setGlobalVolume
-  };
-
   return (
-    <html lang="en">
+    <html lang="zh-CN" suppressHydrationWarning>
       <head>
+        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-NQW1FR7BEZ"
           strategy="afterInteractive"
-        />
-        <Script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2409588554709380"
-          crossOrigin="anonymous"
         />
         <Script id="google-analytics" strategy="afterInteractive">
           {`
@@ -104,16 +32,14 @@ export default function RootLayout({ children }) {
             gtag('config', 'G-NQW1FR7BEZ');
           `}
         </Script>
+        <Script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2409588554709380"
+          crossOrigin="anonymous"
+          strategy="afterInteractive"
+        />
       </head>
-      <body className="min-h-screen text-slate-200 antialiased" style={{ background: 'linear-gradient(to bottom right, #0f172a, #1e1b4b, #312e81)' }}>
-        <AudioContext.Provider value={audioContextValue}>
-          <Navigation />
-          <main className="min-h-screen">
-            {children}
-          </main>
-          <Footer />
-        </AudioContext.Provider>
-      </body>
-    </html >
-  );
+      <body>{children}</body>
+    </html>
+  )
 }
