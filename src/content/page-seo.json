@@ -1,13 +1,13 @@
 {
   "en": {
     "home": {
-      "title": "Smart Sleep Cycle Calculator for Better Mornings | SleepTool",
-      "description": "Use our smart 90-minute sleep cycle calculator to find ideal bedtime and wake-up windows, reduce grogginess, and wake up refreshed.",
-      "h1": "Smart Sleep Cycle Calculator"
+      "title": "Sleep Calculator — Wake Up Refreshed with 90-Min Cycles | SleepTool",
+      "description": "Free sleep calculator that times your bedtime and wake-up to complete 90-minute cycles. Stop waking up groggy — find your perfect sleep window tonight.",
+      "h1": "Sleep Calculator: Find Your Perfect Sleep Window"
     },
     "tools/sleep-calculator": {
-      "title": "Sleep Calculator Tool: Best Bedtime and Wake Time | SleepTool",
-      "description": "Calculate your best bedtime or wake-up time with sleep-cycle logic in three modes: by wake time, by bedtime, or from now.",
+      "title": "Sleep Calculator Tool: Bedtime & Wake Time by Cycle | SleepTool",
+      "description": "Calculate your best bedtime or wake-up time in three modes: by wake time, by bedtime, or from right now. Built on 90-minute sleep cycle science.",
       "h1": "Sleep Cycle Calculator Tool"
     },
     "tools/bedtime-calculator": {
