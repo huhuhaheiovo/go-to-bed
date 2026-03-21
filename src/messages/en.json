@@ -1,0 +1,117 @@
+{
+  "meta": {
+    "home": {
+      "title": "Sleep Calculator — Find the Best Bedtime by Sleep Cycles | SleepTool",
+      "description": "Free sleep calculator using 90-minute sleep cycle science. Calculate the perfect bedtime or wake-up time to feel refreshed and avoid sleep inertia every morning."
+    },
+    "tools/sleep-calculator": {
+      "title": "Sleep Calculator Tool — Calculate Bedtime & Wake Time Online | SleepTool",
+      "description": "Three modes: reverse-calculate bedtime from wake time, plan wake times from a set bedtime, or calculate from right now. Based on complete 90-minute sleep cycles."
+    },
+    "tools/bedtime-calculator": {
+      "title": "Bedtime Calculator — Find Your Perfect Bedtime by Wake Time | SleepTool",
+      "description": "Enter your wake-up time and our bedtime calculator instantly shows the best times to go to sleep based on complete 90-minute sleep cycles. Never wake up groggy again."
+    },
+    "tools/wake-up-calculator": {
+      "title": "Wake Up Time Calculator — Best Alarm Times by Sleep Cycles | SleepTool",
+      "description": "Enter your bedtime and our wake up time calculator shows the optimal alarm times to surface from light N1 sleep. Beat sleep inertia and start every morning sharp."
+    },
+    "tools/nap-calculator": {
+      "title": "Nap Calculator — Best Nap Length & Timing for Max Energy | SleepTool",
+      "description": "Our nap calculator finds the perfect nap duration: 10 min for alertness, 20 min for performance, 90 min for full cycle recovery. Wake up sharp, not groggy."
+    },
+    "guides/sleep-stages": {
+      "title": "Sleep Stages Explained: N1, N2, N3 Deep Sleep & REM | SleepTool",
+      "description": "Complete guide to the four sleep stages: light sleep N1, N2 consolidation, slow-wave deep sleep N3, and REM. Learn what each stage does and why it matters for health."
+    },
+    "guides/how-much-sleep": {
+      "title": "How Much Sleep Do I Need? Science-Based Guide by Age | SleepTool",
+      "description": "How much sleep do you need? Adults need 7-9 hours, teens 8-10, seniors 7-8. Backed by CDC and AASM research — find your ideal sleep duration and optimise recovery."
+    },
+    "guides/sleep-deprivation": {
+      "title": "Sleep Deprivation: Effects on Brain, Immunity & Lifespan | SleepTool",
+      "description": "Sleep deprivation impairs cognition, weakens immunity, and raises chronic disease risk. Explore the science and five evidence-based strategies to recover sleep debt."
+    },
+    "guides/sleep-tips": {
+      "title": "20 Science-Backed Sleep Tips to Improve Sleep Quality Tonight | SleepTool",
+      "description": "Improve sleep quality without medication. From consistent schedules and light management to bedroom temperature and relaxation — 20 evidence-based sleep tips that work."
+    },
+    "blog": {
+      "title": "Sleep Health Blog — Science-Backed Sleep Research & Tips | SleepTool",
+      "description": "SleepTool blog: regular deep dives into sleep science, circadian rhythm, sleep disorders, and practical sleep hygiene tips to help you sleep better every night."
+    }
+  },
+  "nav": {
+    "home": "Home",
+    "tools": "Tools",
+    "guides": "Guides",
+    "blog": "Blog",
+    "cta": "Calculate Now",
+    "tool_sleep_calc": "Sleep Calculator",
+    "tool_bedtime": "Bedtime Calculator",
+    "tool_wakeup": "Wake Up Calculator",
+    "tool_nap": "Nap Calculator"
+  },
+  "home": {
+    "badge": "Based on 90-Minute Sleep Cycle Science",
+    "h1_part1": "Sleep",
+    "h1_italic": "Calculator",
+    "h1_suffix": "",
+    "tagline": "Enter your wake-up time or bedtime. We calculate the perfect sleep windows based on complete 90-minute cycles so you wake up refreshed, not groggy.",
+    "stat_cycle": "min / cycle",
+    "stat_cycles": "ideal cycles",
+    "stat_stage": "best wake stage",
+    "now_label": "Current time",
+    "section_how_title": "How the Sleep Calculator Works",
+    "section_how_sub": "Three steps rooted in sleep science — reliable every time.",
+    "section_tools_title": "More Sleep Calculation Tools",
+    "section_tools_sub": "Each tool is optimised for a specific sleep scenario.",
+    "section_stages_title": "The Four Sleep Stages",
+    "section_stages_sub": "Every 90 minutes your brain and body complete a precise recovery cycle.",
+    "section_table_title": "Recommended Sleep by Age",
+    "section_table_sub": "Source: CDC, American Academy of Sleep Medicine (AASM) guidelines",
+    "section_faq_title": "Frequently Asked Questions",
+    "section_faq_sub": "Common questions about the sleep calculator and sleep science.",
+    "section_guides_title": "Sleep Knowledge Hub",
+    "section_guides_sub": "In-depth guides to help you understand and improve your sleep.",
+    "cta_title": "Ready to Optimise Your Sleep?",
+    "cta_sub": "Use the sleep calculator now to find the perfect bedtime and wake time for tonight.",
+    "cta_btn": "↑ Use Sleep Calculator"
+  },
+  "calculator": {
+    "mode_wake": "I need to wake at",
+    "mode_sleep": "Sleep right now",
+    "mode_bedtime": "I'll fall asleep at",
+    "label_wake_time": "Wake-up time",
+    "label_result_placeholder": "Best bedtimes (click calculate)",
+    "label_sleep_onset": "Sleep onset (how long it takes you to fall asleep)",
+    "label_age": "Age group (affects recommended duration)",
+    "age_child": "Child",
+    "age_child_range": "6–12 yrs",
+    "age_teen": "Teen",
+    "age_teen_range": "13–17 yrs",
+    "age_adult": "Adult",
+    "age_adult_range": "18–64 yrs",
+    "age_senior": "Senior",
+    "age_senior_range": "65+ yrs",
+    "btn_calculate": "✦ Calculate Best Sleep Times",
+    "result_bedtime_label": "Bedtime",
+    "result_wakeup_label": "Wake up",
+    "result_recommended": "★ Best",
+    "result_cycles_unit": "cycles",
+    "sleep_now_sub": "Planned sleep time",
+    "sleep_now_hint": "Plus {onset} min to fall asleep"
+  },
+  "footer": {
+    "tools_title": "Tools",
+    "guides_title": "Guides",
+    "about_title": "About",
+    "about_us": "About Us",
+    "privacy": "Privacy Policy",
+    "disclaimer": "For reference only — not medical advice",
+    "copyright": "© 2026 SleepTool · sleeptool.top"
+  },
+  "locale_switcher": {
+    "label": "Language"
+  }
+}

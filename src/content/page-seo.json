@@ -1,0 +1,173 @@
+{
+  "en": {
+    "home": {
+      "title": "Smart Sleep Cycle Calculator for Better Mornings | SleepTool",
+      "description": "Use our smart 90-minute sleep cycle calculator to find ideal bedtime and wake-up windows, reduce grogginess, and wake up refreshed.",
+      "h1": "Smart Sleep Cycle Calculator"
+    },
+    "tools/sleep-calculator": {
+      "title": "Sleep Calculator Tool: Best Bedtime and Wake Time | SleepTool",
+      "description": "Calculate your best bedtime or wake-up time with sleep-cycle logic in three modes: by wake time, by bedtime, or from now.",
+      "h1": "Sleep Cycle Calculator Tool"
+    },
+    "tools/bedtime-calculator": {
+      "title": "Bedtime Calculator by Wake-Up Time | SleepTool",
+      "description": "Enter your target wake-up time and instantly get recommended bedtimes based on complete 90-minute sleep cycles.",
+      "h1": "Bedtime Calculator"
+    },
+    "tools/wake-up-calculator": {
+      "title": "Wake-Up Time Calculator by Bedtime | SleepTool",
+      "description": "Set your bedtime and get optimal wake-up times to avoid sleep inertia and start your day with more energy.",
+      "h1": "Wake-Up Time Calculator"
+    },
+    "tools/nap-calculator": {
+      "title": "Nap Calculator for Energy and Recovery | SleepTool",
+      "description": "Plan power naps and full-cycle naps with practical nap timing suggestions for focus, alertness, and recovery.",
+      "h1": "Nap Calculator"
+    },
+    "guides/sleep-stages": {
+      "title": "Sleep Stages Explained: N1, N2, N3 and REM | SleepTool",
+      "description": "Learn how each sleep stage works and why sleep cycles matter for mental clarity, memory, and physical recovery.",
+      "h1": "Sleep Stages Guide"
+    },
+    "guides/how-much-sleep": {
+      "title": "How Much Sleep Do You Need by Age? | SleepTool",
+      "description": "Find science-based recommended sleep duration by age with practical guidance you can apply tonight.",
+      "h1": "How Much Sleep Do You Need?"
+    },
+    "guides/sleep-deprivation": {
+      "title": "Sleep Deprivation Effects and Recovery Basics | SleepTool",
+      "description": "Understand how sleep loss impacts cognition, mood, and health, plus what to do to recover safely.",
+      "h1": "Sleep Deprivation Guide"
+    },
+    "guides/sleep-tips": {
+      "title": "Practical Sleep Tips That Actually Work | SleepTool",
+      "description": "Improve your sleep quality with practical routines and evidence-based habits for better nights and mornings.",
+      "h1": "Sleep Improvement Tips"
+    },
+    "blog": {
+      "title": "Sleep Health Blog and Insights | SleepTool",
+      "description": "Read practical sleep science insights, recovery strategies, and guide-style articles from SleepTool.",
+      "h1": "Sleep Blog"
+    },
+    "blog/[slug]": {
+      "title": "{slug} | SleepTool Blog",
+      "description": "SleepTool blog article on sleep health, sleep cycles, and practical sleep improvement strategies.",
+      "h1": "{slug}"
+    }
+  },
+  "zh": {
+    "home": {
+      "title": "智能睡眠周期计算器：计算最佳入睡与起床时间 | SleepTool",
+      "description": "基于 90 分钟睡眠周期的智能计算器，帮助你找到更适合自己的入睡与唤醒窗口，减少起床困倦。",
+      "h1": "智能睡眠周期计算器"
+    },
+    "tools/sleep-calculator": {
+      "title": "睡眠计算器工具：最佳入睡与起床时间 | SleepTool",
+      "description": "支持三种模式：按起床时间、按入睡时间、从现在开始，快速计算最佳睡眠时间点。",
+      "h1": "睡眠周期计算器工具"
+    },
+    "tools/bedtime-calculator": {
+      "title": "入睡时间计算器：按起床时间反推 | SleepTool",
+      "description": "输入目标起床时间，快速获得推荐上床时间，尽量覆盖完整睡眠周期。",
+      "h1": "入睡时间计算器"
+    },
+    "tools/wake-up-calculator": {
+      "title": "起床时间计算器：按入睡时间推算 | SleepTool",
+      "description": "根据你的入睡时间计算更理想的起床时刻，减少睡眠惰性，提升晨起状态。",
+      "h1": "起床时间计算器"
+    },
+    "tools/nap-calculator": {
+      "title": "午睡计算器：更高效的小睡安排 | SleepTool",
+      "description": "根据目标状态规划午睡时长与结束时间，兼顾提神效率与醒后清醒度。",
+      "h1": "午睡计算器"
+    },
+    "guides/sleep-stages": {
+      "title": "睡眠阶段详解：N1、N2、N3 与 REM | SleepTool",
+      "description": "用易懂方式解释睡眠阶段与周期结构，帮助你理解为什么在某些时间点醒来更轻松。",
+      "h1": "睡眠阶段指南"
+    },
+    "guides/how-much-sleep": {
+      "title": "不同年龄每天该睡多久？科学建议汇总 | SleepTool",
+      "description": "按年龄查看推荐睡眠时长，并结合实际作息给出可执行的睡眠安排建议。",
+      "h1": "每天需要睡多久？"
+    },
+    "guides/sleep-deprivation": {
+      "title": "睡眠不足的影响与恢复建议 | SleepTool",
+      "description": "了解睡眠不足对认知、情绪和健康的影响，并掌握可执行的恢复策略。",
+      "h1": "睡眠不足指南"
+    },
+    "guides/sleep-tips": {
+      "title": "改善睡眠质量的实用建议 | SleepTool",
+      "description": "从作息、光照、咖啡因和卧室环境入手，提升入睡速度与整体睡眠质量。",
+      "h1": "改善睡眠小技巧"
+    },
+    "blog": {
+      "title": "睡眠健康博客与实用文章 | SleepTool",
+      "description": "阅读关于睡眠周期、作息管理与睡眠质量优化的内容与实操建议。",
+      "h1": "睡眠博客"
+    },
+    "blog/[slug]": {
+      "title": "{slug} | SleepTool 博客",
+      "description": "SleepTool 睡眠博客文章，聚焦睡眠周期、睡眠健康与实用改善方法。",
+      "h1": "{slug}"
+    }
+  },
+  "ja": {
+    "home": {
+      "title": "スマート睡眠サイクル計算機：最適な就寝・起床時間 | SleepTool",
+      "description": "90分睡眠サイクルに基づき、就寝時間と起床時間の最適な候補を計算して朝のだるさを軽減します。",
+      "h1": "スマート睡眠サイクル計算機"
+    },
+    "tools/sleep-calculator": {
+      "title": "睡眠計算ツール：最適な就寝・起床時刻 | SleepTool",
+      "description": "起床時刻・就寝時刻・今すぐ寝るの3モードで、睡眠サイクルに沿った時刻を計算できます。",
+      "h1": "睡眠サイクル計算ツール"
+    },
+    "tools/bedtime-calculator": {
+      "title": "就寝時間計算機：起床時刻から逆算 | SleepTool",
+      "description": "目標の起床時刻から、90分サイクルを基準にした就寝候補をすばやく表示します。",
+      "h1": "就寝時間計算機"
+    },
+    "tools/wake-up-calculator": {
+      "title": "起床時間計算機：就寝時刻から算出 | SleepTool",
+      "description": "就寝時刻を入力して、眠気を残しにくい起床時刻の候補を確認できます。",
+      "h1": "起床時間計算機"
+    },
+    "tools/nap-calculator": {
+      "title": "昼寝計算機：効率的な仮眠プラン | SleepTool",
+      "description": "集中力回復や疲労軽減のために、目的に合わせた昼寝時間の目安を計算します。",
+      "h1": "昼寝計算機"
+    },
+    "guides/sleep-stages": {
+      "title": "睡眠ステージ解説：N1・N2・N3・REM | SleepTool",
+      "description": "睡眠ステージの役割とサイクル構造を理解して、より質の高い睡眠設計に役立てましょう。",
+      "h1": "睡眠ステージガイド"
+    },
+    "guides/how-much-sleep": {
+      "title": "年齢別の推奨睡眠時間は？ | SleepTool",
+      "description": "年齢ごとの推奨睡眠時間を確認し、実生活で使える睡眠計画に落とし込めます。",
+      "h1": "どれくらい眠るべき？"
+    },
+    "guides/sleep-deprivation": {
+      "title": "睡眠不足の影響と回復の基本 | SleepTool",
+      "description": "睡眠不足が心身に与える影響と、日常で実践しやすい回復アプローチを解説します。",
+      "h1": "睡眠不足ガイド"
+    },
+    "guides/sleep-tips": {
+      "title": "睡眠の質を上げる実用ヒント | SleepTool",
+      "description": "就寝前の習慣・光・温度・カフェイン管理など、実践しやすい改善策を紹介します。",
+      "h1": "睡眠改善のヒント"
+    },
+    "blog": {
+      "title": "睡眠ブログ：知識と実践ガイド | SleepTool",
+      "description": "睡眠サイクル、睡眠衛生、生活リズム改善に関する実用記事をまとめています。",
+      "h1": "睡眠ブログ"
+    },
+    "blog/[slug]": {
+      "title": "{slug} | SleepTool ブログ",
+      "description": "SleepTool ブログ記事。睡眠サイクルと睡眠改善に役立つ実践情報を紹介します。",
+      "h1": "{slug}"
+    }
+  }
+}

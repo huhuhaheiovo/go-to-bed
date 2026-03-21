@@ -1,0 +1,117 @@
+{
+  "meta": {
+    "home": {
+      "title": "睡眠計算機 — 睡眠サイクルで最適な就寝・起床時間を計算 | SleepTool",
+      "description": "90分間の睡眠サイクル科学に基づく無料睡眠計算機。最適な就寝時間と起床時間を精密に算出。睡眠慣性にさようなら、毎朝すっきり目覚めましょう。"
+    },
+    "tools/sleep-calculator": {
+      "title": "睡眠計算機ツール — 就寝・起床時間をオンライン計算 | SleepTool",
+      "description": "3つのモード：起床時間から就寝時間を逆算、今から眠る場合の起床時間、就寝時間から起床時間を計算。90分サイクルで4〜6回の完全な睡眠周期を確保。"
+    },
+    "tools/bedtime-calculator": {
+      "title": "就寝時間計算機 — 起床時間から最適な就寝時間を逆算 | SleepTool",
+      "description": "明日の起床時間を入力するだけで、就寝時間計算機が最適な就寝時刻を即座に算出。完全な睡眠サイクルで毎朝すっきり目覚めましょう。"
+    },
+    "tools/wake-up-calculator": {
+      "title": "起床時間計算機 — 睡眠サイクルで最適なアラーム時刻を算出 | SleepTool",
+      "description": "就寝時間を入力すると、起床時間計算機がN1浅眠段階に合わせた最適なアラーム時刻を表示。睡眠慣性を克服して毎朝元気にスタート。"
+    },
+    "tools/nap-calculator": {
+      "title": "昼寝計算機 — 最適な昼寝時間と長さ | SleepTool",
+      "description": "10分で眠気解消、20分でパフォーマンスアップ、90分で完全回復。昼寝計算機があなたに最適な昼寝プランを提案します。"
+    },
+    "guides/sleep-stages": {
+      "title": "睡眠段階の完全ガイド：N1・N2・N3深睡眠とREMを解説 | SleepTool",
+      "description": "睡眠の4段階を詳しく解説：N1浅眠、N2軽眠、N3深い徐波睡眠、REM睡眠。各睡眠段階の機能を理解して睡眠の質を最適化しましょう。"
+    },
+    "guides/how-much-sleep": {
+      "title": "毎日何時間寝ればいい？年齢別の科学的睡眠時間ガイド | SleepTool",
+      "description": "必要な睡眠時間は年齢によって異なります。乳児は14時間、成人は7-9時間、高齢者は7-8時間。CDC・AASM のデータに基づいた睡眠時間ガイド。"
+    },
+    "guides/sleep-deprivation": {
+      "title": "睡眠不足の影響：認知・免疫・寿命への科学的根拠 | SleepTool",
+      "description": "慢性的な睡眠不足は記憶力低下、免疫機能低下、心血管リスク増加を引き起こします。最新の研究をもとに睡眠不足の改善策を解説します。"
+    },
+    "guides/sleep-tips": {
+      "title": "睡眠の質を改善する科学的な方法20選 | SleepTool",
+      "description": "薬なしで睡眠の質を改善。規則的な就寝習慣から光の管理、室温の最適化まで、エビデンスに基づいた20の睡眠改善法を今夜から実践しましょう。"
+    },
+    "blog": {
+      "title": "睡眠健康ブログ — 科学的な睡眠知識と研究解説 | SleepTool",
+      "description": "SleepToolブログ：睡眠科学の研究解説、概日リズム、睡眠障害の分析、実践的な睡眠衛生のヒントを定期配信。より健康的な睡眠習慣を築きましょう。"
+    }
+  },
+  "nav": {
+    "home": "ホーム",
+    "tools": "計算ツール",
+    "guides": "睡眠ガイド",
+    "blog": "ブログ",
+    "cta": "計算する",
+    "tool_sleep_calc": "睡眠計算機",
+    "tool_bedtime": "就寝時間計算機",
+    "tool_wakeup": "起床時間計算機",
+    "tool_nap": "昼寝計算機"
+  },
+  "home": {
+    "badge": "90分間睡眠サイクル科学に基づく",
+    "h1_part1": "睡眠",
+    "h1_italic": "計算機",
+    "h1_suffix": "",
+    "tagline": "起床時間または就寝時間を入力すると、90分サイクルに基づいた最適な睡眠時間帯を精密に算出します。",
+    "stat_cycle": "分 / サイクル",
+    "stat_cycles": "理想サイクル数",
+    "stat_stage": "最適覚醒段階",
+    "now_label": "現在時刻",
+    "section_how_title": "睡眠計算機の仕組み",
+    "section_how_sub": "睡眠科学に根ざした3ステップで、毎回信頼できる結果を。",
+    "section_tools_title": "その他の睡眠計算ツール",
+    "section_tools_sub": "各ツールは特定の睡眠シナリオに最適化されています。",
+    "section_stages_title": "睡眠の4段階",
+    "section_stages_sub": "90分ごとに、脳と体が精密な回復サイクルを完了します。",
+    "section_table_title": "年齢別推奨睡眠時間",
+    "section_table_sub": "出典：CDC・米国睡眠医学会（AASM）ガイドライン",
+    "section_faq_title": "よくある質問",
+    "section_faq_sub": "睡眠計算機と睡眠科学に関するよくある質問にお答えします。",
+    "section_guides_title": "睡眠知識ライブラリ",
+    "section_guides_sub": "睡眠を深く理解するための詳細ガイド。",
+    "cta_title": "睡眠を最適化する準備はできていますか？",
+    "cta_sub": "今すぐ睡眠計算機を使って、今夜の最適な就寝・起床時間を見つけましょう。",
+    "cta_btn": "↑ 睡眠計算機を使う"
+  },
+  "calculator": {
+    "mode_wake": "起床時間から逆算",
+    "mode_sleep": "今すぐ眠る",
+    "mode_bedtime": "就寝時間から計算",
+    "label_wake_time": "起床時間",
+    "label_result_placeholder": "最適な就寝時間（計算ボタンを押す）",
+    "label_sleep_onset": "入眠時間（眠りにつくまでの時間）",
+    "label_age": "年齢層（推奨睡眠時間に影響）",
+    "age_child": "子ども",
+    "age_child_range": "6〜12歳",
+    "age_teen": "10代",
+    "age_teen_range": "13〜17歳",
+    "age_adult": "成人",
+    "age_adult_range": "18〜64歳",
+    "age_senior": "高齢者",
+    "age_senior_range": "65歳以上",
+    "btn_calculate": "✦ 最適な睡眠時間を計算する",
+    "result_bedtime_label": "就寝時刻",
+    "result_wakeup_label": "起床時刻",
+    "result_recommended": "★ おすすめ",
+    "result_cycles_unit": "サイクル",
+    "sleep_now_sub": "予定就寝時間",
+    "sleep_now_hint": "入眠時間 {onset} 分を含む"
+  },
+  "footer": {
+    "tools_title": "計算ツール",
+    "guides_title": "睡眠ガイド",
+    "about_title": "について",
+    "about_us": "私たちについて",
+    "privacy": "プライバシーポリシー",
+    "disclaimer": "参考情報であり、医療アドバイスではありません",
+    "copyright": "© 2026 SleepTool · sleeptool.top"
+  },
+  "locale_switcher": {
+    "label": "言語"
+  }
+}

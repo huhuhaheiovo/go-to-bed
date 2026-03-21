@@ -1,0 +1,117 @@
+{
+  "meta": {
+    "home": {
+      "title": "睡眠计算器 — 按周期计算最佳入睡起床时间 | SleepTool",
+      "description": "免费睡眠计算器，基于90分钟睡眠周期科学，精准推算最佳入睡时间与起床时间。告别睡眠惰性，每天神清气爽地醒来。"
+    },
+    "tools/sleep-calculator": {
+      "title": "睡眠计算器工具 — 在线计算最佳入睡起床时间 | SleepTool",
+      "description": "三种模式：按起床时间反推入睡时刻、现在入睡推算起床时间、按入睡时间推算起床时间。基于90分钟周期，精准推算4-6个完整睡眠周期。"
+    },
+    "tools/bedtime-calculator": {
+      "title": "入睡时间计算器 — 根据起床时间反推最佳上床时间 | SleepTool",
+      "description": "输入明天的起床时间，入睡时间计算器立即推算最佳上床时刻，确保睡满完整周期。适合上班族、学生与倒班工作者。"
+    },
+    "tools/wake-up-calculator": {
+      "title": "起床时间计算器 — 按睡眠周期推算最清醒的闹钟时刻 | SleepTool",
+      "description": "已知入睡时间，起床时间计算器推算一组最佳起床时刻。把闹钟设在周期切换点，拒绝睡眠惰性，每天精力充沛地醒来。"
+    },
+    "tools/nap-calculator": {
+      "title": "午睡时间计算器 — 最科学的小睡时长与时机 | SleepTool",
+      "description": "10分钟提神、20分钟增效还是90分钟完整周期？午睡时间计算器帮你找到最适合自己的午睡方案，避免醒后昏沉。"
+    },
+    "guides/sleep-stages": {
+      "title": "睡眠阶段完整指南：N1、N2、N3深睡眠与REM详解 | SleepTool",
+      "description": "全面解析睡眠的四个阶段：N1浅睡、N2轻睡、N3深度慢波睡眠与REM快速眼动睡眠。了解每个睡眠阶段的功能，优化你的睡眠周期质量。"
+    },
+    "guides/how-much-sleep": {
+      "title": "每天需要睡多久？各年龄段科学睡眠时长指南 | SleepTool",
+      "description": "每天需要睡多久因年龄而异。婴儿需14小时，成人需7-9小时，老年人需7-8小时。附CDC/AASM权威数据，帮你找到最适合自己的睡眠时长。"
+    },
+    "guides/sleep-deprivation": {
+      "title": "睡眠不足的危害：影响认知、免疫与寿命的科学证据 | SleepTool",
+      "description": "长期睡眠不足损害记忆、削弱免疫、增加心血管风险。本文汇总最新科学研究，帮你认识并改善睡眠不足问题，从今晚开始睡得更好。"
+    },
+    "guides/sleep-tips": {
+      "title": "20个改善睡眠质量的科学方法 — 睡眠卫生完全指南 | SleepTool",
+      "description": "无需药物，从固定作息到调节光线，从优化室温到放松技巧，20条循证睡眠建议帮你从今晚开始显著改善睡眠质量。"
+    },
+    "blog": {
+      "title": "睡眠健康博客 — 科学睡眠知识与研究解读 | SleepTool",
+      "description": "SleepTool睡眠博客：定期发布睡眠科学研究解读、昼夜节律知识、睡眠障碍分析与实用睡眠技巧，帮你建立更健康的睡眠习惯。"
+    }
+  },
+  "nav": {
+    "home": "首页",
+    "tools": "计算工具",
+    "guides": "睡眠指南",
+    "blog": "博客",
+    "cta": "开始计算",
+    "tool_sleep_calc": "睡眠计算器",
+    "tool_bedtime": "入睡时间计算器",
+    "tool_wakeup": "起床时间计算器",
+    "tool_nap": "午睡计算器"
+  },
+  "home": {
+    "badge": "基于90分钟睡眠周期科学",
+    "h1_part1": "睡眠",
+    "h1_italic": "计算器",
+    "h1_suffix": "",
+    "tagline": "输入你的起床时间或就寝时间，精准推算最佳入睡与唤醒时刻，让你每天在最轻的睡眠阶段自然醒来。",
+    "stat_cycle": "分钟 / 周期",
+    "stat_cycles": "理想周期数",
+    "stat_stage": "最佳唤醒阶段",
+    "now_label": "当前时间",
+    "section_how_title": "睡眠计算器如何工作",
+    "section_how_sub": "三步原理，让你的睡眠计算器结果精准可信。",
+    "section_tools_title": "更多睡眠计算工具",
+    "section_tools_sub": "每种工具针对特定睡眠场景优化，帮你全方位掌握睡眠节律。",
+    "section_stages_title": "睡眠的四个阶段",
+    "section_stages_sub": "每90分钟一次循环，你的大脑和身体在经历精密的修复旅程。",
+    "section_table_title": "各年龄段推荐睡眠时长",
+    "section_table_sub": "来源：美国 CDC、美国睡眠医学会 (AASM) 及中国睡眠研究会2024年指南",
+    "section_faq_title": "常见问题",
+    "section_faq_sub": "关于睡眠计算器与睡眠科学最常被问到的问题。",
+    "section_guides_title": "睡眠知识库",
+    "section_guides_sub": "深度科普文章，帮你建立对睡眠的完整认知。",
+    "cta_title": "准备好优化你的睡眠了吗？",
+    "cta_sub": "立即使用睡眠计算器，找到今晚最适合你的入睡与起床时间。",
+    "cta_btn": "↑ 使用睡眠计算器"
+  },
+  "calculator": {
+    "mode_wake": "按起床时间推算",
+    "mode_sleep": "现在去睡",
+    "mode_bedtime": "按入睡时间推算",
+    "label_wake_time": "我需要在几点起床",
+    "label_result_placeholder": "最佳入睡时间（点击计算）",
+    "label_sleep_onset": "入睡时长（你通常需要多久才能睡着）",
+    "label_age": "你的年龄段（影响推荐睡眠时长）",
+    "age_child": "儿童",
+    "age_child_range": "6–12岁",
+    "age_teen": "青少年",
+    "age_teen_range": "13–17岁",
+    "age_adult": "成人",
+    "age_adult_range": "18–64岁",
+    "age_senior": "老年人",
+    "age_senior_range": "65岁+",
+    "btn_calculate": "✦ 使用睡眠计算器推算最佳时间",
+    "result_bedtime_label": "入睡时刻",
+    "result_wakeup_label": "起床时刻",
+    "result_recommended": "★ 推荐",
+    "result_cycles_unit": "个周期",
+    "sleep_now_sub": "计划入睡时间",
+    "sleep_now_hint": "加上 {onset} 分钟入睡时间"
+  },
+  "footer": {
+    "tools_title": "计算工具",
+    "guides_title": "知识指南",
+    "about_title": "关于",
+    "about_us": "关于我们",
+    "privacy": "隐私政策",
+    "disclaimer": "本工具仅供参考，不构成医疗建议",
+    "copyright": "© 2026 SleepTool · sleeptool.top — 睡眠计算器"
+  },
+  "locale_switcher": {
+    "label": "语言"
+  }
+}
