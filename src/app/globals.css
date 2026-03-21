@@ -516,6 +516,31 @@ input[type='range'] {
   margin-bottom: 18px;
 }
 
+.content-section {
+  margin-bottom: 38px;
+}
+
+.content-section h3 {
+  font-size: 20px;
+  color: #fff;
+  margin: 18px 0 8px;
+  font-family: 'DM Serif Display', serif;
+}
+
+.content-section a {
+  color: var(--accent2);
+  text-decoration: none;
+}
+
+.content-section a:hover {
+  text-decoration: underline;
+}
+
+.faq-section {
+  margin-top: 24px;
+  margin-bottom: 62px;
+}
+
 .sleep-table-wrap {
   overflow-x: auto;
   margin-bottom: 36px;

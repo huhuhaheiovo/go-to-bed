@@ -194,6 +194,11 @@ function parseTimeToToday(value) {
   return date;
 }
 
+function localizedPath(locale, path) {
+  if (locale === 'en') return path;
+  return `/${locale}${path}`;
+}
+
 export default function SleepCalculator({ locale = 'en', homeH1 }) {
   const dictionary = COPY[locale] || COPY.en;
   const tCalc = useTranslations('calculator');
@@ -208,6 +213,7 @@ export default function SleepCalculator({ locale = 'en', homeH1 }) {
   const [results, setResults] = useState([]);
   const [resultTitle, setResultTitle] = useState('');
   const [resultSubtitle, setResultSubtitle] = useState('');
+  const isEnglish = locale === 'en';
 
   useEffect(() => {
     const id = setInterval(() => {
@@ -248,6 +254,49 @@ export default function SleepCalculator({ locale = 'en', homeH1 }) {
       };
     });
   }, [results, ageRule.max, ageRule.min]);
+
+  const faqSchema = useMemo(() => {
+    if (!isEnglish) return null;
+
+    return {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: [
+        {
+          '@type': 'Question',
+          name: 'Is the sleep calculator accurate?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'The calculator uses the accepted 90-minute cycle average. Individual cycles vary, so use results as a strong starting point and fine-tune by one cycle when needed.'
+          }
+        },
+        {
+          '@type': 'Question',
+          name: 'Why do I feel worse after 9 hours than after 7.5?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Wake timing matters as much as total hours. If your alarm interrupts deep sleep, sleep inertia can feel stronger even after longer sleep.'
+          }
+        },
+        {
+          '@type': 'Question',
+          name: 'Can shift workers use this sleep calculator?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Yes. Enter your real planned sleep or wake time, day or night, and the calculator returns cycle-based recommendations.'
+          }
+        },
+        {
+          '@type': 'Question',
+          name: 'How is the bedtime calculator different from the sleep calculator?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'The bedtime calculator focuses on one workflow: reverse a wake time into a bedtime. The main sleep calculator supports wake-time, bedtime, and from-now modes.'
+          }
+        }
+      ]
+    };
+  }, [isEnglish]);
 
   function runCalculation() {
     if (mode === 'wake') {
@@ -409,6 +458,30 @@ export default function SleepCalculator({ locale = 'en', homeH1 }) {
           </div>
         )}
 
+        {isEnglish && (
+          <section className="content-section reveal" aria-labelledby="how-it-works">
+            <h2 id="how-it-works" className="section-title">How This Sleep Calculator Works</h2>
+            <p className="section-sub">
+              Your sleep is not a single block of rest. Every night your brain moves through repeating
+              <strong> 90-minute sleep cycles</strong>, each including light sleep, consolidated sleep,
+              deep slow-wave sleep, and REM. A strong <strong>sleep calculator</strong> helps you wake near
+              cycle boundaries instead of in deep sleep, reducing morning grogginess.
+            </p>
+            <p className="section-sub">
+              This <strong>sleep calculator</strong> works in three steps. First, enter when you need to wake
+              up or when you plan to sleep. Second, set your normal sleep onset delay, usually around 15 minutes.
+              Third, choose your age group so recommendations align with guideline ranges. You then get practical
+              bedtime or wake-up options based on completed cycles rather than arbitrary hour targets.
+            </p>
+            <p className="section-sub">
+              Use the <a href={localizedPath(locale, '/tools/sleep-calculator')}>sleep calculator tool</a> for
+              full control, the <a href={localizedPath(locale, '/tools/bedtime-calculator')}>bedtime calculator</a>{' '}
+              when you know your alarm time, and the{' '}
+              <a href={localizedPath(locale, '/tools/nap-calculator')}>nap calculator</a> for daytime recovery.
+            </p>
+          </section>
+        )}
+
         <div className="reveal">
           <h2 className="section-title">{dictionary.sectionTableTitle}</h2>
           <p className="section-sub">{dictionary.sectionTableSub}</p>
@@ -430,6 +503,36 @@ export default function SleepCalculator({ locale = 'en', homeH1 }) {
           </div>
         </div>
 
+        {isEnglish && (
+          <section className="content-section reveal" aria-labelledby="sleep-stages-overview">
+            <h2 id="sleep-stages-overview" className="section-title">What Happens in Each Sleep Stage</h2>
+            <p className="section-sub">
+              Understanding sleep stages makes every recommendation from a <strong>sleep calculator</strong> more useful.
+            </p>
+            <h3>N1 - Light Sleep (5-10 min)</h3>
+            <p className="section-sub">
+              This is the transition into sleep. You can wake easily and usually feel clear-headed. The sleep calculator
+              aims wake suggestions near this lighter transition point.
+            </p>
+            <h3>N2 - Sleep Consolidation</h3>
+            <p className="section-sub">
+              Heart rate slows, body temperature drops, and memory processing starts. N2 is often the largest share of a
+              typical night and supports stable sleep continuity.
+            </p>
+            <h3>N3 - Deep Slow-Wave Sleep</h3>
+            <p className="section-sub">
+              Physical repair peaks here. Waking in N3 can trigger strong sleep inertia, the heavy and disoriented feeling
+              many people experience after an alarm.
+            </p>
+            <h3>REM - Rapid Eye Movement</h3>
+            <p className="section-sub">
+              REM supports emotional processing and creative integration. Late-night REM periods get longer, so very short
+              nights often sacrifice REM first. Read the full{' '}
+              <a href={localizedPath(locale, '/guides/sleep-stages')}>sleep stages guide</a> for deeper details.
+            </p>
+          </section>
+        )}
+
         <div className="tips-section reveal">
           <h2 className="section-title">{dictionary.tipsTitle}</h2>
           <p className="section-sub">{dictionary.tipsSub}</p>
@@ -442,6 +545,43 @@ export default function SleepCalculator({ locale = 'en', homeH1 }) {
             ))}
           </div>
         </div>
+
+        {isEnglish && (
+          <section className="content-section faq-section reveal" aria-labelledby="faq">
+            <h2 id="faq" className="section-title">Frequently Asked Questions</h2>
+
+            <h3>Is the sleep calculator accurate?</h3>
+            <p className="section-sub">
+              The calculator uses the accepted 90-minute cycle average from sleep research. Individual cycles can vary,
+              so treat results as a precise starting point and adjust by one cycle if needed.
+            </p>
+
+            <h3>Why do I feel worse after 9 hours than after 7.5?</h3>
+            <p className="section-sub">
+              Total hours are only part of sleep quality. If your alarm interrupts deep sleep, sleep inertia can feel
+              stronger than after a shorter but better-timed night.
+            </p>
+
+            <h3>Can shift workers use this sleep calculator?</h3>
+            <p className="section-sub">
+              Yes. Enter your real planned sleep or wake time, whether day or night. The sleep calculator works from
+              cycle timing, not fixed clock-hour assumptions.
+            </p>
+
+            <h3>How is the bedtime calculator different from the sleep calculator?</h3>
+            <p className="section-sub">
+              The <a href={localizedPath(locale, '/tools/bedtime-calculator')}>bedtime calculator</a> focuses on reversing
+              a wake time into a bedtime. The main sleep calculator supports all three planning modes with the same cycle logic.
+            </p>
+          </section>
+        )}
+
+        {faqSchema && (
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+          />
+        )}
       </section>
     </>
   );
