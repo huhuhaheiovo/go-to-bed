@@ -28,6 +28,11 @@ export default function RootLayout({ children }) {
             gtag('config', 'G-NQW1FR7BEZ');
           `}
         </Script>
+        <Script
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2409588554709380"
+          crossOrigin="anonymous"
+          strategy="afterInteractive"
+        />
       </head>
       <body>{children}</body>
     </html>
