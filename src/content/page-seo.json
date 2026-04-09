@@ -56,9 +56,9 @@
       "h1": "{slug}"
     },
     "sbtitest": {
-      "title": "SBTI Test - Free Online SBTI Assessment | SleepTool",
-      "description": "Take the free SBTI test online. Assess your sleep behavior and tendencies with this comprehensive SBTI assessment tool.",
-      "h1": "SBTI Test"
+      "title": "SBTI Test — Free Social Personality Test for 27 Types | SleepTool",
+      "description": "Take the free SBTI personality test and discover which of 27 social personality types you are. Analyze self-esteem, attachment style, and decision-making across 15 dimensions.",
+      "h1": "Free SBTI Personality Test — Discover Your Social Type"
     }
   },
   "zh": {
@@ -118,8 +118,8 @@
       "h1": "{slug}"
     },
     "sbtitest": {
-      "title": "SBTI测试 - 免费在线SBTI评估工具 | SleepTool",
-      "description": "免费在线SBTI测试，评估你的睡眠行为与倾向，帮助你更好地了解自己的睡眠模式。",
+      "title": "SBTI测试 — 免费SBTI人格测试｜测你是27种类型中的哪一种",
+      "description": "免费在线SBTI测试，通过15个维度精准匹配27种SBTI人格类型。从自我、情感、态度、驱力、社交五大模型剖析你的人格，立即开始测试。",
       "h1": "SBTI测试"
     }
   },
@@ -180,8 +180,8 @@
       "h1": "{slug}"
     },
     "sbtitest": {
-      "title": "SBTIテスト - 無料オンラインSBTI評価 | SleepTool",
-      "description": "無料のオンラインSBTIテストで、睡眠行動と傾向を評価しましょう。",
+      "title": "SBTIテスト｜無料性格診断 — 27タイプからあなたを特定",
+      "description": "無料のSBTI性格テスト。15の次元で27タイプに分類する新しいソーシャル性格診断です。MBTIとは異なり、自己・感情・態度・行動力・社交の5モデルから自尊心、愛着スタイル、意思決定、社交性を分析します。今すぐあなたのSBTIタイプを発見しましょう。",
       "h1": "SBTIテスト"
     }
   }

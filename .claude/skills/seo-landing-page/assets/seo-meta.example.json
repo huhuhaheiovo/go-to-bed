@@ -1,0 +1,51 @@
+{
+  "_comment": "SEO元数据配置文件 - 从此文件读取所有页面元信息，方便多语言维护",
+  "keyword": "AI写作工具",
+  "url_slug": "/ai-writing-tool",
+  "schema_type": "SoftwareApplication",
+  "locales": {
+    "zh": {
+      "lang": "zh-CN",
+      "title": "AI写作工具 - 10秒生成专业内容 | BrandName",
+      "title_length_note": "当前: 23字 / 建议16-20字",
+      "description": "专业AI写作工具，支持营销文案、博客文章、产品描述一键生成。关键词密度智能优化，SEO评分实时显示。免费试用，无需注册。",
+      "description_length_note": "当前: 60字 / 建议50-70字",
+      "h1": "让AI写作工具替你完成80%的内容创作工作",
+      "h2_list": [
+        "AI写作工具的5大核心功能",
+        "为什么10万+创作者选择这款AI写作工具",
+        "AI写作工具 vs 人工写作：效率对比",
+        "如何用AI写作工具提升SEO内容质量",
+        "常见问题：关于AI写作工具"
+      ],
+      "og_title": "AI写作工具 - 10秒生成专业内容",
+      "og_description": "10万+创作者在用的AI写作工具，营销文案、博客文章、产品描述一键搞定。"
+    },
+    "en": {
+      "lang": "en-US",
+      "title": "AI Writing Tool - Generate Professional Content in 10s | BrandName",
+      "description": "The AI writing tool trusted by 100K+ creators. Generate marketing copy, blog posts, and product descriptions instantly. Free trial, no signup required.",
+      "h1": "The AI Writing Tool That Does 80% of Your Content Work",
+      "h2_list": [
+        "5 Core Features of Our AI Writing Tool",
+        "Why 100K+ Creators Choose This AI Writing Tool",
+        "AI Writing Tool vs Manual Writing: Efficiency Comparison",
+        "How to Improve SEO Content Quality with AI Writing Tool",
+        "FAQ: About AI Writing Tool"
+      ],
+      "og_title": "AI Writing Tool - Generate Professional Content in 10s",
+      "og_description": "The AI writing tool trusted by 100K+ creators. Generate any content instantly."
+    },
+    "ja": {
+      "lang": "ja-JP",
+      "title": "AI文章作成ツール - 10秒でプロ品質のコンテンツを生成 | BrandName",
+      "description": "10万人以上が使うAI文章作成ツール。マーケティングコピー、ブログ記事、商品説明を一発生成。SEOスコアもリアルタイム表示。無料トライアル。",
+      "h1": "AI文章作成ツールでコンテンツ制作の80%を自動化",
+      "h2_list": [
+        "AI文章作成ツールの5つの主要機能",
+        "なぜ10万人以上がこのAI文章作成ツールを選ぶのか",
+        "よくある質問：AI文章作成ツールについて"
+      ]
+    }
+  }
+}
