@@ -54,6 +54,11 @@
       "title": "{slug} | SleepTool Blog",
       "description": "SleepTool blog article on sleep health, sleep cycles, and practical sleep improvement strategies.",
       "h1": "{slug}"
+    },
+    "sbtitest": {
+      "title": "SBTI Test - Free Online SBTI Assessment | SleepTool",
+      "description": "Take the free SBTI test online. Assess your sleep behavior and tendencies with this comprehensive SBTI assessment tool.",
+      "h1": "SBTI Test"
     }
   },
   "zh": {
@@ -111,6 +116,11 @@
       "title": "{slug} | SleepTool 博客",
       "description": "SleepTool 睡眠博客文章，聚焦睡眠周期、睡眠健康与实用改善方法。",
       "h1": "{slug}"
+    },
+    "sbtitest": {
+      "title": "SBTI测试 - 免费在线SBTI评估工具 | SleepTool",
+      "description": "免费在线SBTI测试，评估你的睡眠行为与倾向，帮助你更好地了解自己的睡眠模式。",
+      "h1": "SBTI测试"
     }
   },
   "ja": {
@@ -168,6 +178,11 @@
       "title": "{slug} | SleepTool ブログ",
       "description": "SleepTool ブログ記事。睡眠サイクルと睡眠改善に役立つ実践情報を紹介します。",
       "h1": "{slug}"
+    },
+    "sbtitest": {
+      "title": "SBTIテスト - 無料オンラインSBTI評価 | SleepTool",
+      "description": "無料のオンラインSBTIテストで、睡眠行動と傾向を評価しましょう。",
+      "h1": "SBTIテスト"
     }
   }
 }
